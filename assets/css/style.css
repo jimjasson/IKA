@@ -1,0 +1,264 @@
+/* Logo */
+
+.logo {
+	height: 120px;
+    width: 140px;
+}
+
+.logo img {
+	width: 100%
+}
+
+/* Top right containers for login and register */
+.top_corner_register{
+   position:absolute;
+   top:40px;
+   right:100px;
+ }
+
+.top_corner_login{
+  position:absolute;
+  top:40px;
+  right:250px;
+}
+
+/* Navigation Bar */
+
+#top_nav_menu {
+  background: #A0D468;
+  width: auto;
+}
+#top_nav_menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+
+#top_nav_menu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#top_nav_menu ul li {
+  display: inline-block;
+  padding: 0;
+  width: 200px;
+  margin: 0;
+}
+#top_nav_menu.align-right ul li {
+  float: right;
+}
+#top_nav_menu.align-center ul {
+  text-align: center;
+}
+#top_nav_menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Didact Gothic', sans-serif;;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#top_nav_menu ul li a:hover {
+  color: #126F35;
+}
+#top_nav_menu ul li a:hover:before {
+  width: 100%;
+}
+#top_nav_menu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#top_nav_menu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #126F35;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#top_nav_menu ul li.last > a:after,
+#top_nav_menu ul li:last-child > a:after {
+  display: none;
+}
+#top_nav_menu ul li.active a {
+  color: #126F35;
+}
+#top_nav_menu ul li.active a:before {
+  width: 100%;
+}
+#top_nav_menu.align-right li.last > a:after,
+#top_nav_menu.align-right li:last-child > a:after {
+  display: block;
+}
+#top_nav_menu.align-right li:first-child a:after {
+  display: none;
+}
+
+/* If the browser window is resized */
+
+@media screen and (max-width: 768px) {
+  #top_nav_menu ul li {
+    float: none;
+    display: block;
+  }
+  #top_nav_menu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+  #top_nav_menu ul li.last > a,
+  #top_nav_menu ul li:last-child > a {
+    border: 0;
+  }
+  #top_nav_menu ul li a:after {
+    display: none;
+  }
+  #top_nav_menu ul li a:before {
+    display: none;
+  }
+}
+
+/* Search field */
+
+input[type=text] {
+    width:400px;
+    height:50px;
+    font-size: 20px;
+    color: grey;
+    -moz-border-radius: 15px;
+ 	border-radius: 15px;
+    border:solid 1px grey;
+    padding:5px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+/* Search button */
+
+.search_button {
+    width: 100px;
+    height:40px;
+    font-size: 18px;
+    font-family: 'Didact Gothic', sans-serif;
+    color: white;
+    background: #A0D468;
+    -moz-border-radius: 15px;
+ 	border-radius: 15px;
+    border:solid 1px;
+    padding:5px;
+    margin-left: -108px;
+}
+
+/* Register Button */
+
+.register_button {
+  border-radius: 4px;
+  background-color: #FF866D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.register_button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.register_button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.register_button:hover span {
+  padding-right: 25px;
+}
+
+.register_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Login Button */
+
+.login_button {
+  border-radius: 4px;
+  background-color: #76C0B4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.login_button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.login_button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.login_button:hover span {
+  padding-right: 25px;
+}
+
+.login_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
