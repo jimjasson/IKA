@@ -2,12 +2,90 @@
 
 .logo {
 	height: 120px;
-    width: 140px;
+  width: 140px;
 }
 
 .logo img {
-	width: 100%
+	width: 100%;
 }
+
+.home_menu_wrapper{
+  overflow: auto; 
+  display: flex;
+  margin: -10px;
+}
+
+
+.home_left_menu{
+  float:left; 
+  margin: 10px;
+  position: relative;
+  padding-top:130px;
+  padding-left: 220px;
+  width: 300px;
+  height: 200px;
+}
+
+.home_left_menu img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  display: block;
+}
+
+.home_left_menu img:hover {
+  opacity: 1;
+}
+
+.home_left_menu .centered {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-family: 'Didact Gothic', sans-serif;
+  color: white;
+}
+
+.home_left_menu .centered img:hover{
+   opacity: 1;
+}
+
+
+.home_right_menu{
+  overflow: auto;
+  margin: 10px;
+  position: relative;
+  padding-top:130px;
+  width: 300px;
+  height: 200px;
+}
+
+.home_right_menu img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  display: block;
+}
+
+.home_right_menu img:hover {
+  opacity: 1;
+}
+
+.home_right_menu .centered {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-family: 'Didact Gothic', sans-serif;
+  color: white;
+}
+
+.home_right_menu .centered img:hover{
+   opacity: 1;
+}
+
 
 /* Top right containers for login and register */
 .top_corner_register{
@@ -25,7 +103,7 @@
 /* Navigation Bar */
 
 #top_nav_menu {
-  background: #A0D468;
+  background: #9EB5A8;
   width: auto;
 }
 #top_nav_menu ul {
@@ -74,7 +152,7 @@
   transition: color .25s;
 }
 #top_nav_menu ul li a:hover {
-  color: #126F35;
+  color: #487268;
 }
 #top_nav_menu ul li a:hover:before {
   width: 100%;
@@ -98,7 +176,7 @@
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #126F35;
+  background: #487268;
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
@@ -110,7 +188,7 @@
   display: none;
 }
 #top_nav_menu ul li.active a {
-  color: #126F35;
+  color: #487268;
 }
 #top_nav_menu ul li.active a:before {
   width: 100%;
@@ -171,9 +249,9 @@ input[type=text] {
     font-size: 18px;
     font-family: 'Didact Gothic', sans-serif;
     color: white;
-    background: #A0D468;
+    background: #9EB5A8;
     -moz-border-radius: 15px;
- 	border-radius: 15px;
+ 	  border-radius: 15px;
     border:solid 1px;
     padding:5px;
     margin-left: -108px;
