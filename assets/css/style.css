@@ -17,13 +17,12 @@
 
 
 .home_left_menu{
-  float:left; 
-  margin: 10px;
-  position: relative;
-  padding-top:130px;
-  padding-left: 220px;
-  width: 300px;
+  top: 299px;
+  left: 220px;
+  width: 250px;
   height: 200px;
+  position: fixed;
+  float: left;
 }
 
 .home_left_menu img {
@@ -39,8 +38,8 @@
 
 .home_left_menu .centered {
   position: absolute;
-  top: 70%;
-  left: 70%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   font-family: 'Didact Gothic', sans-serif;
@@ -53,12 +52,12 @@
 
 
 .home_right_menu{
-  overflow: auto;
-  margin: 10px;
-  position: relative;
-  padding-top:130px;
-  width: 300px;
+  top: 299px;
+  left: 480px;
+  width: 250px;
   height: 200px;
+  position: fixed;
+  overflow: auto;
 }
 
 .home_right_menu img {
@@ -74,7 +73,7 @@
 
 .home_right_menu .centered {
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 28px;
@@ -86,7 +85,12 @@
    opacity: 1;
 }
 
-
+.notification_banner {
+  width: 40px;
+  position: relative;
+  padding-top: 400px;
+  padding-left: 200px;
+}
 /* Top right containers for login and register */
 .top_corner_register{
    position:absolute;

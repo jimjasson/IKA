@@ -35,6 +35,9 @@
 </div>
 
 <div class="home_menu_wrapper">
+<!--   <div class="notification_banner">
+    hi
+  </div> -->
   <div class="home_left_menu">
     <a href="/IKA/index.php">
       <img src="data/images/asfalismenoi_banner.jpg">
