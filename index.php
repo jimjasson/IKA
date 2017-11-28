@@ -35,9 +35,13 @@
 </div>
 
 <div class="home_menu_wrapper">
-<!--   <div class="notification_banner">
-    hi
-  </div> -->
+  <div class="notification_banner">
+    <div class="centered"> Ψάχνεις τις βεβαιώσεις;</div>
+  </div>
+  <div class="notification_banner_border">
+     <div class="top"> Είναι στο προφίλ σου!</div>
+     <div class="bottom"> Κάνε <u> σύνδεση </u> ή <u>εγγραφή</u> για να τις δεις!</div>
+  </div>
   <div class="home_left_menu">
     <a href="/IKA/index.php">
       <img src="data/images/asfalismenoi_banner.jpg">
