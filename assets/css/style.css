@@ -220,6 +220,41 @@
   font-weight: bold;
   margin-left: 100px;
 }
+
+.footer .contact img{
+  width:28%;
+  height:auto;
+  position: relative;
+  left: 5px;
+  float: left;
+}
+
+.footer .contact .number{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 100px;
+  top:12px;
+  position: relative;
+}
+
+.footer .schedule img{
+  width:23%;
+  height:auto;
+  position: relative;
+  bottom:22px;
+  left:20px;
+  float: left;
+}
+
+.footer .schedule .time{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  margin-left: 100px;
+  position: relative;
+  bottom: 12px;
+}
 /* Top right containers for login and register */
 .top_corner_register{
    position:absolute;
