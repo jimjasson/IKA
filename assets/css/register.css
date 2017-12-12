@@ -1,0 +1,165 @@
+.register_form{
+	width:500px;
+	height:450px;
+	left:300px;
+	position: absolute;
+	background-color: #F2F2F2;
+	top:190px;
+}
+
+.register_form .title{
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 28px;
+	margin-left: 115px;
+	margin-top: 10px;
+}
+
+input[type=text].register_input {
+	width:400px;
+	height:25px;
+	margin-top: 15px;
+	margin-left: 40px;
+	border: none;
+	display: block;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #000000;
+	background: transparent;
+	font-size: 18px;
+}
+
+input[type="password"].register_input {
+	width:400px;
+	height:25px;
+	margin-top: 10px;
+	margin-left: 40px;
+	border: none;
+	display: block;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #000000;
+	background: transparent;
+	font-size: 18px;
+}
+
+input[type="email"].register_input {
+	width:400px;
+	height:25px;
+	margin-top: 10px;
+	margin-left: 40px;
+	border: none;
+	display: block;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #000000;
+	background: transparent;
+	font-size: 18px;
+}
+
+.register_form .submit_button{
+	margin-left: 170px;
+	margin-top: 18px;
+}
+
+.name_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:248px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.name_error .content{
+	margin-left: 2px;
+}
+
+.surname_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:288px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.surname_error .content{
+	margin-left: 2px;
+}
+
+.father_name_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:328px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.father_name_error .content{
+	margin-left: 2px;
+}
+
+.mother_name_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:368px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.mother_name_error .content{
+	margin-left: 2px;
+}
+
+.afm_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:408px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.afm_error .content{
+	margin-left: 2px;
+}
+
+.password_error{
+	background:#AD5152;
+	width:280px;
+	height:28px;
+	position: absolute;
+	top:554px;
+	left:58px;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 10.8px;
+	color:white;
+	z-index: 2;
+}
+
+.password_error .content{
+	margin-left: 2px;
+}
+
