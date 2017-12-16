@@ -1,7 +1,8 @@
 <?php
+error_log( $_SERVER[ "REQUEST_METHOD" ]);
 // The form has been submitted with post method
 if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
-	
+
 	$name        = $_POST[ 'name' ];
 	$surname     = $_POST[ 'surname' ];
 	$father_name = $_POST[ 'father_name' ];
@@ -16,7 +17,9 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 
 	$sql = "INSERT INTO accounts ( NAME, SURNAME, FATHER_NAME, MOTHER_NAME, AFM, EMAIL, USERNAME, PASSWORD ) "
             . "VALUES ('$name', '$surname', '$father_name', '$mother_name', '$afm', '$email', '$username', '$password' )";
-    $mysqli->query( $sql );
+
+	$mysqli->query( $sql );
+	header("location: /IKA/index.php");
 
 }
 

@@ -17,10 +17,10 @@
 
 
 .home_left_menu{
-  top: 299px;
-  left: 220px;
-  width: 253px;
-  height: 200px;
+  top: 40%;
+  left: 17.3%;
+  width: 20%;
+  height: 28%;
   position: absolute;
   float: left;
 }
@@ -41,7 +41,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 2em;
   font-family: 'Didact Gothic', sans-serif;
   color: white;
 }
@@ -52,10 +52,10 @@
 
 
 .home_right_menu{
-  top: 299px;
-  left: 483px;
-  width: 253px;
-  height: 200px;
+  top: 40%;
+  left: 38%;
+  width: 20%;
+  height: 28%;
   position: absolute;
   overflow: auto;
 }
@@ -76,7 +76,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 2em;
   font-family: 'Didact Gothic', sans-serif;
   color: white;
 }
@@ -86,11 +86,11 @@
 }
 
 .notification_banner {
-  width: 250px;
+  width: 20.5%;
   position: absolute;
-  top: 200px;
-  left: 220px;
-  height: 80px;
+  top: 26.6%;
+  left: 17.3%;
+  height: 10.7%;
   background-color: #9EB5A8;
 }
 
@@ -105,11 +105,11 @@
 }
 
 .notification_banner_border {
-  width: 260px;
+  width: 20.5%;
   position: absolute;
-  top: 200px;
-  left: 470px;
-  height: 74px;
+  top: 26.6%;
+  left: 37%;
+  height: 10%;
   background-color: white;
   border-color: #9EB5A8;
   border-style: solid;

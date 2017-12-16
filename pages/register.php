@@ -4,7 +4,6 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
-unset( $_SESSION[ 'logged_in' ] );
 require 'validate.php';
 ?>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -201,7 +200,7 @@ require 'validate.php';
 
 	<div class="title"> Εγγραφή νέου χρήστη </div>
 
-	<form class="form" action="/IKA/index.php" method="post" enctype="multipart/form-data" autocomplete="off">
+	<form class="form" action="/IKA/pages/register.php" method="post" enctype="multipart/form-data" autocomplete="off">
 		<input type="text"  class="register_input" placeholder="Όνομα" id="name" name="name" required />
 		<input type="text"  class="register_input" placeholder="Επώνυμο" id="surname" name="surname" required />
 		<input type="text"  class="register_input" placeholder="Όνομα Πατρός" id="father_name" name="father_name" required />
