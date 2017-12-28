@@ -70,8 +70,15 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		<div class="centered"> Ψάχνεις τις βεβαιώσεις;</div>
 	</div>
 	<div class="notification_banner_border">
-		 <div class="top"> Είναι στο προφίλ σου!</div>
-		 <div class="bottom"> Κάνε <u> σύνδεση </u> ή <u>εγγραφή</u> για να τις δεις!</div>
+		 <?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+		?>
+			<div class="top"> Είναι στο προφίλ σου!</div>
+		<?php } else { ?>
+			<div class="top"> Είναι στο προφίλ σου!</div>
+			<div class="bottom"> Κάνε <u> σύνδεση </u> ή <u>εγγραφή</u> για να τις δεις!</div>
+		<?php 
+		}
+		?>
 	</div>
 	<div class="home_left_menu">
 		<a href="/IKA/index.php">

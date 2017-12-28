@@ -1,5 +1,4 @@
 <?php
-error_log( $_SERVER[ "REQUEST_METHOD" ]);
 // The form has been submitted with post method
 if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 
