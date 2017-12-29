@@ -55,7 +55,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 	<ul>
 		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='#'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
@@ -75,7 +75,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 			<div class="top"> Είναι στο προφίλ σου!</div>
 		<?php } else { ?>
 			<div class="top"> Είναι στο προφίλ σου!</div>
-			<div class="bottom"> Κάνε <u> σύνδεση </u> ή <u>εγγραφή</u> για να τις δεις!</div>
+			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
 		<?php 
 		}
 		?>
