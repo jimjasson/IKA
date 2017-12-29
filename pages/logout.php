@@ -4,7 +4,12 @@ session_start();
 
 if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	unset( $_SESSION[ 'logged_in' ] );
-	header( "location: /IKA/index.php" );
+	if ( isset( $_SESSION['url'] ) ) {
+		$url = $_SESSION['url'];
+		header( "location: $url" );
+	} else {
+		header( "location: /IKA/index.php" );
+	}
 }
 
 ?>

@@ -4,6 +4,8 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
 ?>
 
 <html>
@@ -55,7 +57,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 <div id='top_nav_menu'>
 	<ul>
-		 <li><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
+		 <li><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='active last'><a href='#'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
@@ -70,16 +72,16 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 <div class="home_menu_wrapper">
 	<div class="breadcrumb_container">
 	<ul class="breadcrumb">
-		  <li><a href="#">Αρχική Σελίδα</a></li>
+		  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
 		  <li>Συνταξιούχοι</li>
 	</ul> 
 	</div>
 	<div class="pensioners_menu">
 	<ul>
-	    <li class="first">item1</li>
-	    <li class="second">item1</li>
-	    <li class="third">item1</li>
-	    <li class="fourth">item1</li>
+	    <li class="first">ΔΙΚΑΙΟΥΜΑΙ ΣΥΝΤΑΞΗ;</li>
+	    <li class="second">ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ</li>
+	    <a href='/IKA/pages/under_construction.php' style="color:black"> <li class="third">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ </li> </a>
+	    <li class="fourth">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</li>
 	</ul>
 	</div>
 </div>

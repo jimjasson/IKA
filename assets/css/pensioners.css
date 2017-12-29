@@ -38,7 +38,7 @@ ul.breadcrumb li a:hover {
 }
 
 .pensioners_menu {
-    width: 700px;
+    width: 50%;
     padding-top: 40%; 
     float:left; 
     clear: left;
@@ -50,10 +50,10 @@ ul.breadcrumb li a:hover {
     margin: 20px;
 }
 .pensioners_menu ul li {
-    width: 250px;
-    height: 200px;
+    width: 40%;
+    height: 40%;
     float: left;
-    margin: 10px;
+    margin: 2%;
 }
 
 .pensioners_menu ul .first:hover {
@@ -66,6 +66,7 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     line-height: 200px;
     font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
 }
 
 .pensioners_menu ul .second {
@@ -74,6 +75,7 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     line-height: 200px;
     font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
 }
 
 .pensioners_menu ul .second:hover {
@@ -86,6 +88,7 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     line-height: 200px;
     font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
 }
 
 .pensioners_menu ul .third:hover {
@@ -98,6 +101,7 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     line-height: 200px;
     font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
 }
 
 .pensioners_menu ul .fourth:hover {

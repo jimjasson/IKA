@@ -16,7 +16,13 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 
 	if ( $result->num_rows !== 0 ) {
 		$_SESSION[ 'logged_in'] = "yes";
-		header("location: /IKA/index.php");
+		if ( isset( $_SESSION['url'] ) ) {
+			$url = $_SESSION['url'];
+			header( "location: $url" );
+
+		} else {
+			header( "location: /IKA/index.php" );
+		}
 	}
 }
 
