@@ -12,7 +12,6 @@ if ( isset( $_SESSION['url'] ) ) {
   <title>IKA</title>
 
   <link href="/IKA/assets/css/under_construction.css" rel="stylesheet">
-  <link href="/IKA/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -26,10 +25,10 @@ if ( isset( $_SESSION['url'] ) ) {
           <h2 class="subtitle">Η ιστοσελίδα βρίσκεται υπό κατασκευή. Σύντομα κοντά σας!</h2>
           <h2 class="subtitle"> Μέχρι τότε... </h2>
            <a href= <?php echo $url ?> >
-            <button class="login_button"><span> Προηγούμενη Σελίδα </span></button>
+            <button class="previous_page"><span> Προηγούμενη Σελίδα </span></button>
           </a>
           <a href="/IKA/index.php">
-            <button class="register_button"><span> Αρχική Σελίδα </span></button>
+            <button class="home_page"><span> Αρχική Σελίδα </span></button>
           </a>
         </div>
       </div>
