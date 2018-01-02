@@ -15,7 +15,7 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 	$_SESSION[ 'logged_in'] = "yes";
 
 	$sql = "INSERT INTO accounts ( NAME, SURNAME, FATHER_NAME, MOTHER_NAME, AFM, EMAIL, USERNAME, PASSWORD ) "
-            . "VALUES ('$name', '$surname', '$father_name', '$mother_name', '$afm', '$email', '$username', '$password' )";
+			. "VALUES ('$name', '$surname', '$father_name', '$mother_name', '$afm', '$email', '$username', '$password' )";
 
 	$mysqli->query( $sql );
 	header("location: /IKA/index.php");

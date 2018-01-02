@@ -4,21 +4,17 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
-unset( $_SESSION[ 'logged_in' ] );
-
-require 'login_validation.php';
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 ?>
+
 <html>
-<title>ΣΥΝΔΕΣΗ | ΙΚΑ</title>
 
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/login.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/register.css" media="screen" />
-
-
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners_children.css" media="screen" />
 
 <!-- Logo --> 
 <div class="logo">
@@ -53,7 +49,6 @@ require 'login_validation.php';
 	}
 ?>
 
-
 </head>
 
 <body>
@@ -62,9 +57,9 @@ require 'login_validation.php';
 
 <div id='top_nav_menu'>
 	<ul>
-		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
+		 <li><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li class='active last'><a href='#'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
@@ -73,25 +68,34 @@ require 'login_validation.php';
 	</ul>
 </div>
 
+
 <div class="home_menu_wrapper">
-	<div class="login_form">
-
-
-		<p class="title"> Σύνδεση χρήστη </p>
-
-		<form class="form" action="/IKA/pages/login.php" method="post" enctype="multipart/form-data" autocomplete="off">
-			<input type="text"  class="login_input" placeholder="Όνομα χρήστη (username)" name="username" required />
-			<input type="password"  class="login_input" placeholder="Κωδικός Πρόσβασης" id="password" name="password" required />
-			<div class="login_button_area">
-				<input type="submit" value="Σύνδεση" class="login_button" name="login" />
-			</div>
-		</form>
-
-		<p class="new_user"> Νέος χρήστης; 
-			<button class="register_button"><span> Εγγραφή </span></button>
-		</p>
+	<div class="breadcrumb_container">
+	<ul class="breadcrumb">
+		  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
+		  <li><a href="/IKA/pages/pensioners.php">Συνταξιούχοι</a></li>
+		  <li><a href="/IKA/pages/pensioners_about.php">Δικαιούμαι Σύνταξη;</a></li>
+		  <li> Ανήλικα Τέκνα</li>
+	</ul> 
+	</div>
+	<div class="info_container">
+		<span class="title">Ανήλικα Τέκνα</span>
+		<span class="first">Αν έχετε ανήλικα τέκνα και επιθυμείτε να βγείτε σε μειωμένη σύνταξη πρέπει να έχετε συμπληρώσει 10.050 εργατοημέρες.</span>
+		<?php
+		if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+		?>
+		<span class="second">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/under_construction.php">περιηγηθείτε στο Προφίλ σας</a></span>.
+		<?php } else { ?>
+		<span class="second">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/login.php">συνδεθείτε στο Προφίλ σας</a>. Αν
+			είστε καινούριος χρήστης, πρέπει πρώτα να <a href="/IKA/pages/register.php"> εγγραφείτε στην υπηρεσία</a>.</span>
+		<?php 
+		}
+		?>
+		<span class="third"> Για να υπολογίσετε το ποσό της σύνταξής σας, μπορείτε να χρησιμοποιήσετε τον <a href="/IKA/pages/under_construction.php"> Υπολογισμό Σύνταξης</a>.</span>
 
 	</div>
+	
+</div>
 
 <!-- Footer --> 
 

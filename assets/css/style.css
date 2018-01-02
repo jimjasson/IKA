@@ -10,7 +10,8 @@
 }
 
 .home_menu_wrapper{
-  overflow: auto; 
+  overflow: hidden;
+  float: left; 
   display: flex;
   margin: -10px;
 }

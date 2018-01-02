@@ -14,7 +14,7 @@ ul.breadcrumb li {
 
 /* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumb li+li:before {
-    padding: 8px;
+    padding: 2px;
     color: #9EB5A8;
     content: ">\00a0";
 }
@@ -31,18 +31,17 @@ ul.breadcrumb li a:hover {
 } 
 
 .breadcrumb_container{
-    width:20%;
-    height:auto;
+    width:100%;
     padding-left:1%;
-    float:left; 
 }
 
 .pensioners_menu {
-    width: 50%;
-    padding-top: 40%; 
-    float:left; 
-    clear: left;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    margin: -1%;
 }
+
 .pensioners_menu ul {
     padding: 2%; 
     margin: 5%;
@@ -66,7 +65,7 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     line-height: 200px;
     font-family: 'Didact Gothic', sans-serif;
-    font-size: 21px;
+    font-size: 18px;
 }
 
 .pensioners_menu ul .second {

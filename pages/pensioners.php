@@ -11,6 +11,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <html>
 
 <head>
+<title>ΣΥΝΤΑΞΙΟΥΧΟΙ | ΙΚΑ</title>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners.css" media="screen" />
@@ -71,17 +72,17 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <div class="home_menu_wrapper">
 	<div class="breadcrumb_container">
-	<ul class="breadcrumb">
-		  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
-		  <li>Συνταξιούχοι</li>
-	</ul> 
+		<ul class="breadcrumb">
+			  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
+			  <li>Συνταξιούχοι</li>
+		</ul> 
 	</div>
 	<div class="pensioners_menu">
 	<ul>
-	    <li class="first">ΔΙΚΑΙΟΥΜΑΙ ΣΥΝΤΑΞΗ;</li>
-	    <li class="second">ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ</li>
-	    <a href='/IKA/pages/under_construction.php' style="color:black"> <li class="third">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ </li> </a>
-	    <li class="fourth">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</li>
+		<a href='/IKA/pages/pensioners_about.php' style="color:black"><li class="first">ΔΙΚΑΙΟΥΜΑΙ ΣΥΝΤΑΞΗ;</li></a>
+		<li class="second">ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ</li>
+		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="third">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ </li> </a>
+		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="fourth">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ </li> </a>
 	</ul>
 	</div>
 </div>

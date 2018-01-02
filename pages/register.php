@@ -87,7 +87,7 @@ require 'validate.php';
 		$( '#password' ).on( 'input', function() {
 			var input=$(this);
 			password = input.val()
-			if( '' !== input.val() ) {
+			if( ! empty( input.val() ) ) {
 				if( confirm_password != password ) {
 					$( '#password_error' ).show()
 					$( '#submit_register_button').hide()
@@ -120,6 +120,7 @@ require 'validate.php';
 <html>
 
 <head>
+<title>ΕΓΓΡΑΦΗ | ΙΚΑ</title>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/register.css" media="screen" />
@@ -151,7 +152,9 @@ require 'validate.php';
 	</a>
 </div>
 <div class="top_corner_login">
+	<a href="/IKA/pages/login.php">
 	<button class="login_button"><span> Σύνδεση </span></button>
+	</a>
 </div>
 <?php 
 	}
@@ -165,12 +168,12 @@ require 'validate.php';
 
 <div id='top_nav_menu'>
 	<ul>
-		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
+		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='#'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
-			<input type="text" name="search" class="search_field" placeholder="Αναζήτηση...">
+			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
 				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
 		 </form>
 	</ul>
@@ -211,7 +214,7 @@ require 'validate.php';
 		<input type="password"  class="register_input" placeholder="Κωδικός Πρόσβασης" id="password" name="password" required />
 		<input type="password"  class="register_input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" id="confirm_password" name="confirm_password" required />
 		<div id="submit_register_button" class="submit_button">
-			<input type="submit" value="Register" class="register_button" name="register" />
+			<input type="submit" value="Εγγραφή" class="register_button" name="register" />
 		</div>
 	</form>
 

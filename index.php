@@ -7,6 +7,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 ?>
 
 <html>
+<title>ΑΡΧΙΚΗ ΣΕΛΙΔΑ | ΙΚΑ</title>
 
 <head>
 

@@ -1,0 +1,75 @@
+.full_pension {
+    width:40%;
+    margin-top: 5%;
+    margin-left: 8%;
+    background-color: #cfd8dc;
+    position: absolute;
+    height: 50%;
+}
+
+.reduced_pension {
+    width:40%;
+    margin-top: 5%;
+    margin-left: 50%;
+    background-color: #cfd8dc;
+    position: absolute;
+    height: 50%;
+}
+
+.full_pension ul {
+    padding: 5%; 
+    margin: 5%;
+    list-style-type: none;
+}
+
+.full_pension ul li {
+    width: 96%;
+    height: 20%;
+    float: left;
+    margin: 2%;
+}
+
+.full_pension ul .box {
+    background-color: #9ad1c3; 
+    text-align: center; 
+    vertical-align: middle;
+    line-height: 50px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 18px;
+}
+
+.full_pension .title{
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 25px;
+    left: 30%;
+    position: absolute;
+}
+
+.reduced_pension .title{
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 25px;
+    left: 30%;
+    position: absolute;
+}
+
+.reduced_pension  ul {
+    padding: 5%; 
+    margin: 5%;
+    list-style-type: none;
+}
+
+.reduced_pension ul li {
+    width: 96%;
+    height: 20%;
+    float: left;
+    margin: 2%;
+}
+
+.reduced_pension ul .box {
+    background-color: #9ad1c3; 
+    text-align: center; 
+    vertical-align: middle;
+    line-height: 50px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 18px;
+}
