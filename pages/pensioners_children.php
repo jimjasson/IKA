@@ -80,7 +80,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</div>
 	<div class="info_container">
 		<span class="title">Ανήλικα Τέκνα</span>
-		<span class="first">Αν έχετε ανήλικα τέκνα και επιθυμείτε να βγείτε σε μειωμένη σύνταξη πρέπει να έχετε συμπληρώσει 10.050 εργατοημέρες.</span>
+		<span class="first">Αν έχετε ανήλικα τέκνα και επιθυμείτε να βγείτε σε μειωμένη σύνταξη πρέπει να έχετε συμπληρώσει 5.550 εργατοημέρες.</span>
 		<?php
 		if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
@@ -91,7 +91,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<?php 
 		}
 		?>
-		<span class="third"> Για να υπολογίσετε το ποσό της σύνταξής σας, μπορείτε να χρησιμοποιήσετε τον <a href="/IKA/pages/under_construction.php"> Υπολογισμό Σύνταξης</a>.</span>
+		<span class="third"> Για να υπολογίσετε το ποσό της σύνταξής σας, μπορείτε να χρησιμοποιήσετε τον <a href="/IKA/pages/pensioners_calculation.php"> Υπολογισμό Σύνταξης</a>.</span>
 
 	</div>
 	

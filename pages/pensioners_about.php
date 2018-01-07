@@ -81,7 +81,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<span class="title"> Πλήρης Σύνταξη </span>
 		<ul>
 		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="box"> ΟΔΗΓΟΣ ΣΥΝΤΑΞΙΟΔΟΤΙΚΟΥ ΔΙΚΑΙΩΜΑΤΟΣ </li></a>
-		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="box"> ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ </li></a>
+		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="box"> ΠΡΟΝΟΜΙΑ </li></a>
 		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="box"> ΛΟΙΠΕΣ ΠΛΗΡΟΦΟΡΙΕΣ </li></a>
 		</ul>
 	</div>
