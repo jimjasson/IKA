@@ -6,16 +6,17 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
+require 'calculate_pension.php';
+
 ?>
 
 <html>
-
+<title>ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ | ΙΚΑ</title>
 <head>
-<title>ΣΥΝΤΑΞΙΟΥΧΟΙ | ΙΚΑ</title>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners.css" media="screen" />
-
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners_calculation.css" media="screen" />
 
 <!-- Logo --> 
 <div class="logo">
@@ -72,19 +73,41 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <div class="home_menu_wrapper">
 	<div class="breadcrumb_container">
-		<ul class="breadcrumb">
-			  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
-			  <li>Συνταξιούχοι</li>
-		</ul> 
+	<ul class="breadcrumb">
+		  <li><a href="/IKA/index.php">Αρχική Σελίδα</a></li>
+		  <li><a href="/IKA/pages/pensioners.php">Συνταξιούχοι</a></li>
+		  <li><a href="/IKA/pages/pensioners_about.php"> Δικαιούμαι Σύνταξη;</a></li>
+		  <li>Υπολογισμός Σύνταξης</li>
+	</ul> 
 	</div>
-	<div class="pensioners_menu">
-	<ul>
-		<a href='/IKA/pages/pensioners_about.php' style="color:black"><li class="first">ΔΙΚΑΙΟΥΜΑΙ ΣΥΝΤΑΞΗ;</li></a>
-		<a href='/IKA/pages/pensioners_calculation.php' style="color:black"><li class="second">ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ</li></a>
-		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="third">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ </li> </a>
-		<a href='/IKA/pages/under_construction.php' style="color:black"> <li class="fourth">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ </li> </a>
-	</ul>
+	<div class="calculation_form">
+		<span class="title"> Υπολογισμός Σύνταξης </span>
+
+		<form class="form" action="/IKA/pages/pensioners_calculation.php" method="post" enctype="multipart/form-data" autocomplete="off">
+			<label for="hours">
+	 		 	Εργατοώρες: <input type="number" class="calculation_input" id="hours" name="hours" required>
+			</label>
+			<label for="salary">
+	 		 	Μισθός τελευταίων 5 χρόνων: 
+	 		 	<input type="number" class="calculation_input" id="salary1" name="salary1" required>
+	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary2" name="salary2" required></div>
+				<div class="left_margin"><input type="number" class="calculation_input" id="salary3" name="salary3" required></div>
+	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary4" name="salary4" required></div>
+	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary5" name="salary5" required></div>
+			</label>
+			<label for="pension_type">
+				Τύπος Σύνταξης: <input type="radio" class="calculation_input" value="age_pension" name="radio" checked> Γήρατος 
+				<div class="left_radio">
+				<input type="radio" class="calculation_input" value="disability_pension" name="radio"> Αναπηρίας <br>
+				<input type="radio" class="calculation_input" value="death_insured" name="radio" > Θάνατος Ασφαλισμένου <br>
+				<input type="radio" class="calculation_input" value="death_pensioner" name="radio" > Θάνατος Συνταξιούχου </div>
+			</label>
+			<div id="submit_register_button" class="submit_button">
+				<input type="submit" value="Υπολογισμός" class="register_button" name="calculate" />
+			</div>
+		</form>
 	</div>
+	
 </div>
 
 <!-- Footer --> 

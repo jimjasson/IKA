@@ -1,0 +1,42 @@
+.calculation_form{
+    width:35%;
+    height:56%;
+    left:25%;
+    position: absolute;
+    background-color: #F2F2F2;
+    top:29%;
+}
+
+.calculation_form .title{
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 26px;
+    margin-left: 25%;
+    margin-top: 1%;
+}
+
+input[type=number].calculation_input {
+    font-size: 18px;
+    margin-top: 2.5%;
+    width: 50%;
+}
+
+label {
+    font-family: 'Didact Gothic', sans-serif;
+    margin-left:5%;
+    display: inline-block;
+}
+
+.left_margin{
+    margin-left: 46%;
+    width:100%;
+}
+
+.left_radio{
+    margin-left: 37.4%;
+    width:100%;
+}
+
+.submit_button{
+    margin-left: 35%;
+    margin-top:1%;
+}
