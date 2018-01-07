@@ -11,15 +11,38 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 	$username    = $_POST[ 'username' ];
 	$password    = md5( $_POST[ 'password' ] );
 
-	$_SESSION[ 'username' ] = $username;
-	$_SESSION[ 'logged_in'] = "yes";
+	$sql = "SELECT * FROM accounts WHERE USERNAME='$username' ";
+	
+	$result = $mysqli->query( $sql );
+	$redirect = true;
 
-	$sql = "INSERT INTO accounts ( NAME, SURNAME, FATHER_NAME, MOTHER_NAME, AFM, EMAIL, USERNAME, PASSWORD ) "
-			. "VALUES ('$name', '$surname', '$father_name', '$mother_name', '$afm', '$email', '$username', '$password' )";
+	if ( $result->num_rows === 0 ) {
+		$sql = "INSERT INTO accounts ( NAME, SURNAME, FATHER_NAME, MOTHER_NAME, AFM, EMAIL, USERNAME, PASSWORD ) "
+		. "VALUES ('$name', '$surname', '$father_name', '$mother_name', '$afm', '$email', '$username', '$password' )";
 
-	$mysqli->query( $sql );
-	header("location: /IKA/index.php");
-
+		$mysqli->query( $sql );
+		$_SESSION[ 'username' ] = $username;
+		$_SESSION[ 'logged_in'] = "yes";
+		
+	} else {
+		$redirect = false;
+	}
 }
 
 ?>
+
+<script type="text/javascript">
+<?php
+	if ( $redirect ) {
+ ?>
+ window.location = '/IKA/index.php';
+ <?php
+	} else {
+ ?>
+  window.alert( "Υπάρχει ήδη χρήστης με τα στοιχεία που εισάγατε. Παρακαλούμε επιλέξτε διαφορετικό username." );
+  window.location = '/IKA/pages/register.php';
+<?php
+	}
+?>
+
+</script>
