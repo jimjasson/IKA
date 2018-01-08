@@ -8,6 +8,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 <html>
 <title>ΑΡΧΙΚΗ ΣΕΛΙΔΑ | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
 
 <head>
 

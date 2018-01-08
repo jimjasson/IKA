@@ -9,6 +9,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
 
 <html>
+<title> ΑΝΗΛΙΚΑ ΤΕΚΝΑ </title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
 
 <head>
 
@@ -80,7 +82,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</div>
 	<div class="info_container">
 		<span class="title">Ανήλικα Τέκνα</span>
-		<span class="first">Αν έχετε ανήλικα τέκνα και επιθυμείτε να βγείτε σε μειωμένη σύνταξη πρέπει να έχετε συμπληρώσει 5.550 εργατοημέρες.</span>
+		<span class="first">Αν έχετε ανήλικα τέκνα και επιθυμείτε να βγείτε σε μειωμένη σύνταξη πρέπει να έχετε συμπληρώσει 5.550 εργατοώρες.</span>
 		<?php
 		if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>

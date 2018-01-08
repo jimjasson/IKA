@@ -10,6 +10,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <html>
 <title>ΔΙΚΑΙΟΥΜΑΙ ΣΥΝΤΑΞΗ; | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
+
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />

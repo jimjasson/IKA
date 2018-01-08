@@ -10,8 +10,9 @@ if ( isset( $_SESSION['url'] ) ) {
 ?>
 <head>
 <title>ΥΠΟ ΚΑΤΑΣΚΕΥΗ | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
 
-	<link href="/IKA/assets/css/under_construction.css" rel="stylesheet">
+<link href="/IKA/assets/css/under_construction.css" rel="stylesheet">
 
 </head>
 

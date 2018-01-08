@@ -12,6 +12,8 @@ require 'calculate_pension.php';
 
 <html>
 <title>ΥΠΟΛΟΓΙΣΜΟΣ ΣΥΝΤΑΞΗΣ | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
+
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />

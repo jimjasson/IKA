@@ -121,6 +121,7 @@ require 'validate.php';
 
 <head>
 <title>ΕΓΓΡΑΦΗ | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/register.css" media="screen" />

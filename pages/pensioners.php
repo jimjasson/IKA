@@ -12,6 +12,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <head>
 <title>ΣΥΝΤΑΞΙΟΥΧΟΙ | ΙΚΑ</title>
+<link rel="icon" href="/IKA/data/images/ika.jpg">
+
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/pensioners.css" media="screen" />
