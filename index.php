@@ -56,7 +56,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 <div id='top_nav_menu'>
 	<ul>
 		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
@@ -83,7 +83,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		?>
 	</div>
 	<div class="home_left_menu">
-		<a href="/IKA/index.php">
+		<a href="/IKA/pages/insured.php">
 			<img src="data/images/asfalismenoi_banner.jpg">
 			<div class="centered">Ασφαλισμένοι</div>
 		</a>
