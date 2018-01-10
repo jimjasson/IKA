@@ -18,7 +18,8 @@
 
 
 .home_left_menu{
-  top: 40%;
+  top: 46%;
+  bottom: 15%;
   left: 17.3%;
   width: 20%;
   height: 28%;
@@ -53,7 +54,8 @@
 
 
 .home_right_menu{
-  top: 40%;
+  top: 46%;
+  bottom: 15%;
   left: 38%;
   width: 20%;
   height: 28%;
@@ -89,7 +91,7 @@
 .notification_banner {
   width: 20.5%;
   position: absolute;
-  top: 26.6%;
+  top: 32.6%;
   left: 17.3%;
   height: 10.7%;
   background-color: #9EB5A8;
@@ -108,9 +110,9 @@
 .notification_banner_border {
   width: 20.5%;
   position: absolute;
-  top: 26.6%;
+  top: 32.6%;
   left: 37%;
-  height: 10%;
+  height: 9.8%;
   background-color: white;
   border-color: #9EB5A8;
   border-style: solid;
