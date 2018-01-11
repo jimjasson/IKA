@@ -61,8 +61,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-		 <li class='active last'><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li class='active'><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
