@@ -18,9 +18,6 @@ require 'login_validation.php';
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/login.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/register.css" media="screen" />
-
-
 
 <!-- Logo --> 
 <div class="logo">
