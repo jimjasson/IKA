@@ -14,20 +14,22 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
 
-<!-- Logo --> 
+<!-- Logo -->
 <div class="logo">
 	<a href="/IKA/index.php">
 		 <img src="data/images/ika.jpg">
 	</a>
 </div>
 
-<!-- Register and Login --> 
+<!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	?>
 	<div class="profile_mini_container">
 		<p class="welcome"> Καλωσορίσατε, <?php echo $_SESSION[ 'username' ]; ?> ! </p>
-		<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		<a href="/IKA/pages/profile.php">
+			<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		</a>
 		<a href="/IKA/pages/logout.php">
 			<p class="logout"> ΑΠΟΣΥΝΔΕΣΗ </p>
 		</a>
@@ -43,7 +45,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		<button id="redirect_to_login" class="login_button"><span> Σύνδεση </span></button>
 	</a>
 </div>
-<?php 
+<?php
 	}
 ?>
 
@@ -51,17 +53,17 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 <body>
 
-<!-- Top navigation menu --> 
+<!-- Top navigation menu -->
 
 <div id='top_nav_menu'>
 	<ul>
 		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li> 
+		 <li>
 			<form action="#" method="get"> </li>
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
 		 </form>
 	</ul>
 </div>
@@ -78,7 +80,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		<?php } else { ?>
 			<div class="top"> Είναι στο προφίλ σου!</div>
 			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
-		<?php 
+		<?php
 		}
 		?>
 	</div>
@@ -88,7 +90,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 			<div class="centered">Ασφαλισμένοι</div>
 		</a>
 	</div>
-	
+
 	<div class="home_right_menu">
 		<a href="/IKA/pages/pensioners.php">
 			<img src="data/images/syntaxiouxoi_banner.jpg">
@@ -96,7 +98,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		</a>
 	</div>
 
-<!--Sidebar --> 
+<!--Sidebar -->
 
 	<div class="sidebar">
 	<h1 class="announcments_title"> Ανακοινώσεις </h1>
@@ -108,7 +110,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 	</div>
 	</div>
 
-<!-- Footer --> 
+<!-- Footer -->
 
 	<div class="footer">
 		<div class="contact">

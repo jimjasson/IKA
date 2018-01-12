@@ -11,11 +11,10 @@
 
 .home_menu_wrapper{
   overflow: hidden;
-  float: left; 
+  float: left;
   display: flex;
-  margin: -0.5%;
+  margin: 0.5%;
 }
-
 
 .home_left_menu{
   top: 46%;
@@ -541,5 +540,3 @@ input[type=text].search_field {
   opacity: 1;
   right: 0;
 }
-
-

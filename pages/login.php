@@ -18,6 +18,9 @@ require 'login_validation.php';
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/login.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/register.css" media="screen" />
+
+
 
 <!-- Logo --> 
 <div class="logo">
@@ -62,7 +65,7 @@ require 'login_validation.php';
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li> 
 			<form action="#" method="get"> </li>
