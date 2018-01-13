@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 13 Ιαν 2018 στις 15:47:22
+-- Χρόνος δημιουργίας: 13 Ιαν 2018 στις 17:00:24
 -- Έκδοση διακομιστή: 10.1.29-MariaDB
 -- Έκδοση PHP: 7.2.0
 
@@ -48,6 +48,31 @@ INSERT INTO `accounts` (`NAME`, `SURNAME`, `FATHER_NAME`, `MOTHER_NAME`, `AFM`, 
 ('GIORGOS', 'PAPDOPOULOS', 'ALEXIS', 'MARIA', '123456789', 'alexis@gmail.com', 'alexis', '059bf68f71c80fce55214b411dd2280c'),
 ('John', 'Doe', 'Jack', 'Mary', '987654321', 'johndoe@email.com', 'john', '2829fc16ad8ca5a79da932f910afad1c');
 
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `insurance_info`
+--
+
+CREATE TABLE `insurance_info` (
+  `AFM` char(9) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `BIRTH_DATE` date NOT NULL,
+  `INSUR_DATE` date NOT NULL,
+  `WORKHOURS` int(11) NOT NULL,
+  `INSUR_TYPE` int(11) NOT NULL,
+  `CHILDREN` int(11) NOT NULL,
+  `PENSION_AMOUNT` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `insurance_info`
+--
+
+INSERT INTO `insurance_info` (`AFM`, `BIRTH_DATE`, `INSUR_DATE`, `WORKHOURS`, `INSUR_TYPE`, `CHILDREN`, `PENSION_AMOUNT`) VALUES
+('000000000', '1992-05-12', '2011-11-01', 500, 0, 0, 0),
+('123456789', '1949-03-16', '1971-02-22', 5500, 0, 0, 0),
+('987654321', '1956-10-10', '1980-10-10', 3000, 0, 0, 0);
+
 --
 -- Ευρετήρια για άχρηστους πίνακες
 --
@@ -58,6 +83,12 @@ INSERT INTO `accounts` (`NAME`, `SURNAME`, `FATHER_NAME`, `MOTHER_NAME`, `AFM`, 
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`AFM`),
   ADD UNIQUE KEY `USERNAME` (`USERNAME`);
+
+--
+-- Ευρετήρια για πίνακα `insurance_info`
+--
+ALTER TABLE `insurance_info`
+  ADD PRIMARY KEY (`AFM`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
