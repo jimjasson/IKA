@@ -134,10 +134,13 @@
   color: red;
 }
 
+<<<<<<< HEAD
+=======
 .profile_cont .logout:hover{
 	text-decoration: underline;
 }
 
+>>>>>>> master
 .profile_cont .edit_cont{
   top: 25%;
 	width: 72%;
@@ -148,6 +151,8 @@
   border-style: solid;
 }
 
+<<<<<<< HEAD
+=======
 
 .profile_cont .edit_cont .beb_title{
 	left: 5%;
@@ -174,6 +179,7 @@
 	color: red;
 }
 
+>>>>>>> master
 /* If not logged in */
 
 .login_cont{

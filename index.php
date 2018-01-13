@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
@@ -21,6 +21,17 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<a href="/IKA/index.php">
 		 <img src="data/images/ika.jpg">
 	</a>
+</div>
+
+<div class="top_contact">
+	<p class="title"> Κάλεσέ μας! </p>
+	<img src="data/images/phone.png">
+	<p class="number"> 2101234567 </p>
+</div>
+
+<div class="store">
+	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
+	<img src="data/images/office.png">
 </div>
 
 <!-- Register and Login --> 
@@ -62,8 +73,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΦΟΡΕΙΣ</span></a></li>
+		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
 		 <li class='last'> 
 		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
 			</li>
@@ -112,7 +123,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<div class="notification_banner_border">
 	<?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
-		<div class="top"> Είναι στο προφίλ σου!</div>
+		<div class="top"> Είναι <a href="/IKA/pages/profile_info.php" style="color:#9EB5A8"> στο προφίλ σου </a>!</div>
 		<?php } else { ?>
 			<div class="top"> Είναι στο προφίλ σου!</div>
 			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
@@ -138,12 +149,12 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<div class="footer">
 		<div class="contact">
 			<p class="title"> Επικοινωνία </p>
-			<img src="data/images/phone.png">
+			<img src="/IKA/data/images/phone.png">
 			<p class="number"> 2101234567 </p>
 		</div>
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
-			<img src="data/images/office.png">
+			<img src="/IKA/data/images/office.png">
 			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
 		</div>
 		<div class="map_context">

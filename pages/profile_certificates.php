@@ -2,6 +2,12 @@
 
 session_start();
 
+<<<<<<< HEAD
+$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
+
+?>
+
+=======
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
@@ -9,6 +15,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 ?>
+>>>>>>> master
 <html>
 <title>ΠΡΟΦΙΛ - ΒΕΒΑΙΩΣΕΙΣ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
@@ -28,6 +35,20 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</a>
 </div>
 
+<<<<<<< HEAD
+<div class="top_contact">
+	<p class="title"> Κάλεσέ μας! </p>
+	<img src="/IKA/data/images/phone.png">
+	<p class="number"> 2101234567 </p>
+</div>
+
+<div class="store">
+	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
+	<img src="/IKA/data/images/office.png">
+</div>
+
+=======
+>>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -64,6 +85,18 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
+<<<<<<< HEAD
+		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
+		 <li class='last'> 
+		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+			</li>
+		<a href="/IKA/pages/under_construction.php">
+		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+		</a>
+=======
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li>
@@ -71,6 +104,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
 				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
 		 </form>
+>>>>>>> master
 	</ul>
 </div>
 
@@ -109,6 +143,9 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
+<<<<<<< HEAD
+
+=======
 			<h2 class="beb_title">Διαθέσιμες Βεβαιώσεις:</h2>
 			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
 				<a href="/IKA/pages/cert_ins.php" target="_blank" class="beb1"> Βεβαίωση ωρών εργασίας </a>
@@ -117,6 +154,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 				<a href="/IKA/pages/cert_pens.php" target="_blank" class="beb1"> Βεβαίωση απόδοσης σύνταξης </a>
 
 			<?php } ?>
+>>>>>>> master
 		</div>
 <?php } else { ?>
 		<div class="login_cont">
@@ -148,7 +186,11 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
+<<<<<<< HEAD
+<!-- Footer --> 
+=======
 <!-- Footer -->
+>>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -159,10 +201,14 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
+<<<<<<< HEAD
+			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
+=======
 			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
 		</div>
 		<div class="sitemap">
 			<p class="title"> Sitemap </p>
+>>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -176,4 +222,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> master
