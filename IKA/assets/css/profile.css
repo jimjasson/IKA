@@ -1,0 +1,357 @@
+.profile_cont{
+	top: 30%;
+	width: 80%;
+	height: 67%;
+	left: 10%;
+	position: absolute;
+	background-color: #F2F2F2;
+}
+
+
+.profile_cont .my_profile{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 16px;
+  margin-top: -6%;
+  margin-left: 70%;
+}
+
+
+.profile_cont .name{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-left: 4%;
+}
+
+.profile_cont .username{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  margin-top: -0.8%;
+  margin-left: 4%;
+}
+
+.profile_cont .birthdate{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  margin-top: -0.8%;
+  margin-left: 4%;
+}
+
+.profile_cont .afm{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  margin-top: -0.8%;
+  margin-left: 4%;
+}
+
+
+.profile_cont .buttons{
+  top: 10%;
+	width: 20%;
+	height: 60%;
+	left: 2%;
+	position: relative;
+  background-color: #E0E0E0;
+}
+
+
+.profile_cont .buttons ul{
+  padding: 2%;
+  margin: 5%;
+  list-style-type: none;
+}
+
+.profile_cont .buttons ul li{
+    top: 5%;
+    width: 100%;
+    height: 80%;
+    line-height: 50px;
+    float: left;
+    margin: 4%;
+}
+
+.profile_cont .buttons ul .first:hover {
+    background-color: #9ad1c3;
+}
+
+.profile_cont .buttons ul .first{
+  height: 18%;
+  width: 90%;
+  background-color: #9ad1c3;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+}
+
+.profile_cont .buttons ul .second:hover {
+    background-color: #9ad1c3;
+}
+
+.profile_cont .buttons ul .second{
+  height: 18%;
+  width: 90%;
+  background-color: #A9A9A9;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 12px;
+}
+
+.profile_cont .buttons ul .third:hover {
+    background-color: #9ad1c3;
+}
+
+.profile_cont .buttons ul .third{
+  height: 18%;
+  width: 90%;
+  background-color: #A9A9A9;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+}
+
+.profile_cont .buttons ul .fourth:hover {
+    background-color: #9ad1c3;
+}
+
+.profile_cont .buttons ul .fourth{
+  height: 18%;
+  width: 90%;
+  background-color: #A9A9A9;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+}
+
+.profile_cont .logout{
+  top: 90%;
+  left: 7%;
+  font-size: 14px;
+  position: absolute;
+  color: red;
+}
+
+
+.profile_cont .edit_cont{
+  top: 25%;
+	width: 72%;
+	height: 70%;
+	left: 25%;
+	position: absolute;
+	background-color: white;
+  border-style: solid;
+}
+
+.profile_cont .edit_cont .user_data{
+  top: 2%;
+  left: 5%;
+  position: absolute;
+  font-size: 18px;
+}
+
+.profile_cont .edit_cont .cur_name{
+  top: 15%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_surname{
+  top: 25%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_father{
+  top: 35%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_mother{
+  top: 45%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_afm{
+  top: 55%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_email{
+  top: 65%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .cur_username{
+  top: 75%;
+  left: 5%;
+  position: absolute;
+  font-size: 14px;
+}
+
+.profile_cont .edit_cont .edit_data{
+  top: 2%;
+  left: 55%;
+  position: absolute;
+  font-size: 18px;
+}
+
+.profile_cont .edit_cont .new_name{
+  top: 14%;
+  left: 42%;
+  position: absolute;
+}
+
+.profile_cont .edit_cont .new_email{
+  top: 30%;
+  left: 42%;
+  position: absolute;
+}
+
+.profile_cont .edit_cont .new_password{
+  top: 46%;
+  left: 42%;
+  position: absolute;
+}
+
+.profile_cont .edit_cont .form{
+  top: 12%;
+  left: 45%;
+  height: 80%;
+  position: absolute;
+}
+
+input[type="text"].change_input{
+  top: 10%;
+  left: 30%;
+  position: relative;
+}
+
+input[type="email"].change_input{
+  top: 30%;
+  left: -5%;
+  position: relative;
+}
+
+input[type="password"].change_input{
+  top: 40%;
+  left: 20%;
+  position: relative;
+}
+
+input[type="submit"].change_input{
+  top: 80%;
+  left: 40%;
+  position: absolute;
+}
+
+
+/* If not logged in */
+
+.login_cont{
+    width:100%;
+    padding-left:1%;
+}
+
+.login_cont .alert_icon{
+    display: inline-block;
+    vertical-align: middle;
+    height: 35px;
+    width: 45px;
+}
+
+.login_cont .alert_icon img {
+    width: 100%;
+}
+
+.login_cont .alert_text{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.login_cont .login_alert{
+    width: 60%;
+    position: absolute;
+    top: 44%;
+    left: 20%;
+    margin: -1%;
+    font-size: 19px;
+    color: #303030;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.login_cont .reg_log {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    margin: -1%;
+}
+
+.login_cont .reg_log ul {
+    padding: 2%;
+    margin: 5%;
+    list-style-type: none;
+    margin: 20px;
+}
+.login_cont .reg_log ul li {
+    width: 40%;
+    height: 40%;
+    float: left;
+    margin: 2%;
+    background-color: #F2F2F2;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    height: 200px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.login_cont .login_page {
+  border-radius: 4px;
+  background-color: #76C0B4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.login_cont .login_page:hover {
+  background-color: #50af9f;
+}
+
+.login_cont .register_page {
+  border-radius: 4px;
+  background-color: #FF866D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.login_cont .register_page:hover {
+  background-color: #ff6a4d;
+}

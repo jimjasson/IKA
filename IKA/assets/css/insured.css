@@ -1,0 +1,108 @@
+/* Style the list */
+ul.breadcrumb {
+    padding-top:1%;
+    list-style: none;
+    background-color: white;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 14px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 2px;
+    color: #9EB5A8;
+    content: ">\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #9EB5A8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+} 
+
+.breadcrumb_container{
+    width:100%;
+    padding-left:1%;
+}
+
+.insured_menu {
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    margin: -1%;
+}
+
+.insured_menu ul {
+    padding: 2%; 
+    margin: 5%;
+    list-style-type: none;
+    margin: 20px;
+}
+.insured_menu ul li {
+    width: 40%;
+    height: 40%;
+    float: left;
+    margin: 2%;
+}
+
+.insured_menu ul .first:hover {
+    background-color: #9ad1c3;
+}
+
+.insured_menu ul .first {
+    padding-top: 12%;
+    padding-bottom: 12%;
+    background-color: #c8e7df; 
+    text-align: center; 
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.insured_menu ul .second {
+    padding-top: 10.3%;
+    padding-bottom: 10.3%;
+    background-color: #e5def8;
+    text-align: center; 
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.insured_menu ul .second:hover {
+    background-color: #c7bbe8;
+}
+
+.insured_menu ul .third {
+    padding-top: 10.05%;
+    padding-bottom: 10.05%;
+    background-color: #f8dae6; 
+    text-align: center;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.insured_menu ul .third:hover {
+    background-color: #e8bbcc;
+}
+
+.insured_menu ul .fourth {
+    padding-top: 11.8%;
+    padding-bottom: 11.8%;
+    background-color: #d0ecf7; 
+    text-align: center;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.insured_menu ul .fourth:hover {
+    background-color: #95d4ed;
+}
