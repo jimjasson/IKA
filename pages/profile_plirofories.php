@@ -76,18 +76,24 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 <div class="home_menu_wrapper">
 <!-- Profile  -->
+<?php
+	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+?>
   <div class="profile_cont">
 
     <?php
     $username = $_SESSION[ 'username' ];
     $sql = "SELECT * FROM accounts WHERE USERNAME='$username' ";
-
     $result = $mysqli->query( $sql );
     $rows = $result->fetch_assoc();
+		$afm = $rows['AFM'];
+		$sql = "SELECT *, DATE_FORMAT(BIRTH_DATE, '%d/%m/%Y') as MY_BIRTH_DATE, DATE_FORMAT(INSUR_DATE, '%d/%m/%Y') as MY_INSUR_DATE FROM insurance_info WHERE AFM='$afm' ";
+		$result = $mysqli->query( $sql );
+		$rows2 = $result->fetch_assoc();
     ?>
     <p class ="name"> ΟΝΟΜΑΤΕΠΩΝΥΜΟ: <?php echo  $rows["NAME"], " ", $rows["SURNAME"]; ?> </p>
     <p class ="username"> ΟΝΟΜΑ ΧΡΗΣΤΗ: <?php echo $_SESSION[ 'username' ]; ?> </p>
-    <p class ="birthdate"> ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ:  </p>
+    <p class ="birthdate"> ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ: <?php echo $rows2['MY_BIRTH_DATE']; ?> </p>
     <p class ="afm"> Α.Φ.Μ.: <?php echo $rows["AFM"]; ?> </p>
     <p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
     <div class="buttons">
@@ -103,9 +109,30 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		</a>
 
 		<div class="edit_cont">
-
+			<h2 class="plir_title">Πληροφορίες Ασφάλισης</h2>
+			<p class="plir_text"> Έναρξη Ασφάλισης: <?php echo $rows2['MY_INSUR_DATE']; ?> </p>
+			<p class="plir_worktext"> Μέχρι και σήμερα έχετε συμπληρώσει <?php echo $rows2['WORKHOURS']; ?>  εργατοώρες!	</p>
+			<p class="plir_childtext"> Έχετε <?php echo $rows2['CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
 		</div>
-
+<?php } else { ?>
+		<div class="login_cont">
+			<div class="login_alert">
+				<!-- Logo -->
+				<div class="alert_icon">
+					<img src="/IKA/data/images/alert.png">
+				</div>
+				<div class="alert_text">
+					Πρέπει να συνδεθείτε προκειμένου να δείτε το προφίλ σας!<br>
+				</div>
+			</div>
+			<div class="reg_log">
+			<ul>
+				<li>Καινούργιος χρήστης;<br><a href='/IKA/pages/register.php'><button class="register_page"> Εγγραφή </button></a></li>
+				<li>Έχεις ήδη λογαριασμό;<br><a href='/IKA/pages/login.php'><button class="login_page"> Σύνδεση </button></a></li>
+			</ul>
+			</div>
+		</div>
+<?php }  ?>
 
   </div>
 
