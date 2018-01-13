@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 if ( isset( $_SESSION['url'] ) ) {
 	$url = $_SESSION['url'];
