@@ -4,6 +4,8 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
 ?>
 
 <html>
@@ -27,7 +29,9 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 	?>
 	<div class="profile_mini_container">
 		<p class="welcome"> Καλωσορίσατε, <?php echo $_SESSION[ 'username' ]; ?> ! </p>
-		<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		<a href="/IKA/pages/profile.php">
+			<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		</a>
 		<a href="/IKA/pages/logout.php">
 			<p class="logout"> ΑΠΟΣΥΝΔΕΣΗ </p>
 		</a>
@@ -68,9 +72,11 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 
 <div class="home_menu_wrapper">
+	<!--
 	<div class="notification_banner">
 		<div class="centered"> Ψάχνεις τις βεβαιώσεις;</div>
 	</div>
+	
 	<div class="notification_banner_border">
 		 <?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
@@ -82,6 +88,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		}
 		?>
 	</div>
+	!-->
 	<div class="home_left_menu">
 		<a href="/IKA/pages/insured.php">
 			<img src="data/images/asfalismenoi_banner.jpg">
