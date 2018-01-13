@@ -1,5 +1,5 @@
 .profile_cont{
-  top: auto;
+	top: 30%;
 	width: 80%;
 	height: 67%;
 	left: 10%;
@@ -142,4 +142,102 @@
 	position: absolute;
 	background-color: white;
   border-style: solid;
+}
+
+/* If not logged in */
+
+.login_cont{
+    width:100%;
+    padding-left:1%;
+}
+
+.login_cont .alert_icon{
+    display: inline-block;
+    vertical-align: middle;
+    height: 35px;
+    width: 45px;
+}
+
+.login_cont .alert_icon img {
+    width: 100%;
+}
+
+.login_cont .alert_text{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.login_cont .login_alert{
+    width: 60%;
+    position: absolute;
+    top: 44%;
+    left: 20%;
+    margin: -1%;
+    font-size: 19px;
+    color: #303030;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.login_cont .reg_log {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    margin: -1%;
+}
+
+.login_cont .reg_log ul {
+    padding: 2%;
+    margin: 5%;
+    list-style-type: none;
+    margin: 20px;
+}
+.login_cont .reg_log ul li {
+    width: 40%;
+    height: 40%;
+    float: left;
+    margin: 2%;
+    background-color: #F2F2F2;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    height: 200px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 21px;
+}
+
+.login_cont .login_page {
+  border-radius: 4px;
+  background-color: #76C0B4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.login_cont .login_page:hover {
+  background-color: #50af9f;
+}
+
+.login_cont .register_page {
+  border-radius: 4px;
+  background-color: #FF866D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.login_cont .register_page:hover {
+  background-color: #ff6a4d;
 }
