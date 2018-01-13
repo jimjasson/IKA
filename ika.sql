@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2018 at 05:15 PM
+-- Generation Time: Jan 13, 2018 at 12:32 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -58,27 +58,20 @@ CREATE TABLE `insurance_info` (
   `AFM` char(9) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `BIRTH_DATE` date NOT NULL,
   `INSUR_DATE` date NOT NULL,
-  `PENS_DATE` date NOT NULL,
   `WORKHOURS` int(11) NOT NULL,
   `INSUR_TYPE` int(11) NOT NULL,
   `CHILDREN` int(11) NOT NULL,
-  `PENSION_AMOUNT` int(11) NOT NULL,
-  `INSURED_CHILDREN` int(11) NOT NULL,
-  `YEAR1` int(11) NOT NULL,
-  `YEAR2` int(11) NOT NULL,
-  `YEAR3` int(11) NOT NULL,
-  `YEAR4` int(11) NOT NULL,
-  `YEAR5` int(11) NOT NULL
+  `PENSION_AMOUNT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `insurance_info`
 --
 
-INSERT INTO `insurance_info` (`AFM`, `BIRTH_DATE`, `INSUR_DATE`, `PENS_DATE`, `WORKHOURS`, `INSUR_TYPE`, `CHILDREN`, `PENSION_AMOUNT`, `INSURED_CHILDREN`, `YEAR1`, `YEAR2`, `YEAR3`, `YEAR4`, `YEAR5`) VALUES
-('000000000', '1992-05-12', '2011-11-01', '0000-00-00', 500, 0, 0, 0, 0, 0, 1000, 3500, 6500, 6500),
-('123456789', '1949-03-16', '1971-02-22', '0000-00-00', 7500, 0, 3, 0, 0, 13000, 14000, 13500, 15000, 14000),
-('987654321', '1956-10-10', '1980-10-10', '0000-00-00', 6000, 0, 2, 0, 0, 11000, 11000, 16000, 16000, 16500);
+INSERT INTO `insurance_info` (`AFM`, `BIRTH_DATE`, `INSUR_DATE`, `WORKHOURS`, `INSUR_TYPE`, `CHILDREN`, `PENSION_AMOUNT`) VALUES
+('000000000', '1992-05-12', '2011-11-01', 500, 0, 0, 0),
+('123456789', '1949-03-16', '1971-02-22', 5500, 0, 0, 0),
+('987654321', '1956-10-10', '1980-10-10', 3000, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
