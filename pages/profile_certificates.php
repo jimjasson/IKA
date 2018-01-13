@@ -4,7 +4,7 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
-
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
@@ -17,7 +17,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_bebaioseis.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_certificates.css" media="screen" />
 
 
 
@@ -99,9 +99,9 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
     <div class="buttons">
       <ul>
   		    <a href='/IKA/pages/profile.php' style="color:black"><li class="first">ΕΠΕΞΕΡΓΑΣΙΑ ΠΡΟΦΙΛ</li></a>
-  		    <a href='/IKA/pages/profile_plirofories.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
-  		    <a href='/IKA/pages/profile_bebaioseis.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
-          <a href='/IKA/pages/profile_aithseis.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
+  		    <a href='/IKA/pages/profile_info.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
+  		    <a href='/IKA/pages/profile_certificates.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
+          <a href='/IKA/pages/profile_applications.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
   	  </ul>
     </div>
     <a href="/IKA/pages/logout.php">
@@ -109,7 +109,14 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 		</a>
 
 		<div class="edit_cont">
+			<h2 class="beb_title">Διαθέσιμες Βεβαιώσεις:</h2>
+			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
+				<a href="/IKA/pages/cert_ins.php" target="_blank" class="beb1"> Βεβαίωση ωρών εργασίας </a>
 
+			<?php } else { ?>		<!-- Συνταξιούχος -->
+				<a href="/IKA/pages/cert_pens.php" target="_blank" class="beb1"> Βεβαίωση απόδοσης σύνταξης </a>
+
+			<?php } ?>
 		</div>
 <?php } else { ?>
 		<div class="login_cont">

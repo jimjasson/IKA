@@ -4,7 +4,7 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
-
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
@@ -17,7 +17,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_plirofories.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_info.css" media="screen" />
 
 
 
@@ -99,9 +99,9 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
     <div class="buttons">
       <ul>
   		    <a href='/IKA/pages/profile.php' style="color:black"><li class="first">ΕΠΕΞΕΡΓΑΣΙΑ ΠΡΟΦΙΛ</li></a>
-  		    <a href='/IKA/pages/profile_plirofories.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
-  		    <a href='/IKA/pages/profile_bebaioseis.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
-          <a href='/IKA/pages/profile_aithseis.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
+  		    <a href='/IKA/pages/profile_info.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
+  		    <a href='/IKA/pages/profile_certificates.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
+          <a href='/IKA/pages/profile_applications.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
   	  </ul>
     </div>
     <a href="/IKA/pages/logout.php">
@@ -112,7 +112,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 			<h2 class="plir_title">Πληροφορίες Ασφάλισης</h2>
 			<p class="plir_text"> Έναρξη Ασφάλισης: <?php echo $rows2['MY_INSUR_DATE']; ?> </p>
 			<p class="plir_worktext"> Μέχρι και σήμερα έχετε συμπληρώσει <?php echo $rows2['WORKHOURS']; ?>  εργατοώρες!	</p>
-			<p class="plir_childtext"> Έχετε <?php echo $rows2['CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
+			<p class="plir_childtext"> Έχετε <?php echo $rows2['INSURED_CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
 		</div>
 <?php } else { ?>
 		<div class="login_cont">
@@ -135,12 +135,6 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 <?php }  ?>
 
   </div>
-
-
-
-
-
-
 
 
 

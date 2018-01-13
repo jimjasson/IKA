@@ -4,7 +4,7 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
-
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
@@ -101,9 +101,9 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
     <div class="buttons">
       <ul>
   		    <a href='/IKA/pages/profile.php' style="color:black"><li class="first">ΕΠΕΞΕΡΓΑΣΙΑ ΠΡΟΦΙΛ</li></a>
-  		    <a href='/IKA/pages/profile_plirofories.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
-  		    <a href='/IKA/pages/profile_bebaioseis.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
-          <a href='/IKA/pages/profile_aithseis.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
+  		    <a href='/IKA/pages/profile_info.php' style="color:black"><li class="second">ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ</li></a>
+  		    <a href='/IKA/pages/profile_certificates.php' style="color:black"> <li class="third">ΒΕΒΑΙΩΣΕΙΣ</li> </a>
+          <a href='/IKA/pages/profile_applications.php' style="color:black"> <li class="fourth">ΑΙΤΗΣΕΙΣ</li> </a>
   	  </ul>
     </div>
     <a href="/IKA/pages/logout.php">
@@ -122,14 +122,74 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 			<p class ="new_name">Νέο όνομα χρήστη:</p>
 			<p class ="new_email">Νέο email:</p>
 			<p class ="new_password">Νέο password:</p>
-			<form class="form" action="/IKA/pages/under_construction.php" method="post" enctype="multipart/form-data" autocomplete="off">
-				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" required />
-				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" required />
+			<form class="form" action="/IKA/pages/profile.php" method="post" enctype="multipart/form-data" autocomplete="off">
+				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" />
+				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" />
 				<input type="password"  class="change_input" placeholder="Νέο password"  id="password" name="password"  />
 				<input type="password"  class="change_input" placeholder="Επιβεβαίωση" id="confirm_password" name="confirm_password"  />
-				<input type="submit" class="change_input" value="Αλλαγή" name="register" />
-				</div>
+				<input type="submit" class="change_input" value="Αλλαγή" name="Change" />
 			</form>
+			<?php if( isset( $_POST['Change']) ) {
+				$correct = true;
+				$new_username = " ";
+				$new_email = " ";
+				$new_password = " ";
+				if( isset( $_POST['username'])  ){
+					$new_username = $_POST['username'];
+					$sql = "SELECT * FROM accounts WHERE USERNAME='$new_username' ";
+					$result = $mysqli->query( $sql );
+					if( $result->num_rows > 0 ){	//error
+						$correct = false;
+						$message = "Αυτό το username χρησιμοποιείται ήδη!";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+					}
+				}
+				if( isset( $_POST['email']) ){
+					$new_email = $_POST['email'];
+				}
+				if( isset( $_POST['password']) ){
+					if( isset( $_POST['confirm_password']) )
+					{
+						if ($_POST["password"] === $_POST["confirm_password"]){
+								$new_password = $_POST["password"];
+						}
+						else {
+							$correct = false;
+							$message = "Ο κωδικός επαλήθευσης δεν ταιριάζει με τον αρχικό κωδικό!";
+							echo "<script type='text/javascript'>alert('$message');</script>";
+						}
+					}
+					else {
+						$correct = false;
+						$message = "Πρέπει να συμπληρώσετε και τον κωδικό επαλήθευσης!";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+					}
+				}
+
+				if( $correct == true ){	//update
+					if( $new_username > " " ){
+						$sql = "UPDATE accounts SET USERNAME = '$new_username' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+					}
+					if( $new_email > " " ){
+						$sql = "UPDATE accounts SET EMAIL = '$new_email' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+					}
+					if( $new_password > " " ){
+						$sql = "UPDATE accounts SET PASSWORD = '$new_password' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+						$_SESSION["username"] = $new_username;
+					}
+					$message = $_SESSION['username'] ;
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+				else {	//error
+					$message = "Δεν έγινε αλλαγή των στοιχεία σας!";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+			}
+
+			?>
     </div>
 <?php } else { ?>
 			<div class="login_cont">
@@ -151,12 +211,6 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 			</div>
 <?php }  ?>
   </div>
-
-
-
-
-
-
 
 
 

@@ -8,6 +8,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
+
 ?>
 <html>
 <title>ΠΡΟΦΙΛ - ΑΙΤΗΣΕΙΣ | ΙΚΑ</title>
@@ -18,6 +19,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications_cld.css" media="screen" />
 
 
 
@@ -109,12 +111,23 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-			<h2 class="app_title">Διαθέσιμες Αιτήσεις:</h2>
-			<a href="/IKA/pages/profile_applications_cld.php" class="app_child"> Αίτηση ασφάλισης τέκνων </a>
-			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
-			<a href="/IKA/pages/profile_applications_pens.php" class="app_pens"> Αίτηση συνταξιοδότησης </a>
-			<?php } ?>
+      <h2 class="cld_title">Ασφάλιση Τέκνων:</h2>
+      <p class="cld_text">Έχετε <?php echo $rows2['CHILDREN']; ?> τέκνα και <?php echo $rows2['INSURED_CHILDREN']; ?> από αυτά είναι ασφαλισμένα.</br>Εισάγετε αριθμό τέκνων προς ασφάλιση.</p>
+      <form class="cld_form" action="/IKA/pages/profile_applications_cld_result.php" method="post">
+        <input type="number" name="quantity" min="0" max="<?php echo $rows2['CHILDREN'] - $rows2['INSURED_CHILDREN']; ?>">
+        <div id="submit_register_button" class="submit_button">
+  				<input type="submit" value="Υποβολή" class="cld_button" name="Submit" />
+  			</div>
+      </form>
+      <?php
+      	if(  isset( $_POST['Submit'] )  ){//if the submit button is clicked
+          $nochildren = $_POST['quantity'];
+          $total_insured = $rows2['INSURED_CHILDREN'] + $nochildren;
+          $sql= "UPDATE insurance_info SET INSURED_CHILDREN = $total_insured WHERE AFM = $afm ";
+          $result3 = $mysqli->query( $sql );
 
+      	}
+      ?>
 
 		</div>
 

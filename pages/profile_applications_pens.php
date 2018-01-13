@@ -4,8 +4,15 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
+if ( isset( $_SESSION['url'] ) ) {
+	$url = $_SESSION['url'];
+} else {
+	$url = "/IKA/index.php";
+}
+
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
 
 
 ?>
@@ -18,6 +25,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications_pens.css" media="screen" />
 
 
 
@@ -109,13 +117,33 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-			<h2 class="app_title">Διαθέσιμες Αιτήσεις:</h2>
-			<a href="/IKA/pages/profile_applications_cld.php" class="app_child"> Αίτηση ασφάλισης τέκνων </a>
-			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
-			<a href="/IKA/pages/profile_applications_pens.php" class="app_pens"> Αίτηση συνταξιοδότησης </a>
-			<?php } ?>
+    <?php if ( $rows2['INSUR_TYPE'] == 0) { ?>
 
-
+			<?php if( $rows2['WORKHOURS'] < 5550 ) { ?>  <!-- Not enough for pension -->
+        <p class="message">Λυπούμαστε, μα δεν έχετε συμπληρώσει τις απαραίτητες εργατοώρες για να βγείτε σε σύνταξη! </p>
+      <?php } else { //calculate pension ammount
+        $pension = 0;
+        $mean_salary = ( $rows2['YEAR1'] + $rows2['YEAR2'] + $rows2['YEAR3'] + $rows2['YEAR4'] + $rows2['YEAR5'] ) / 5;
+        $per_month   = $mean_salary/12;
+        if ( $per_month >= 500 && $per_month < 1000 ){
+    			$pension = ( 90 * $per_month ) / 100;
+    		} elseif ( $per_month >= 1000 && $per_month < 2000 ) {
+    			$pension = ( 80 * $per_month ) / 100;
+    		} elseif ( $per_month >= 2000 ) {
+    			$pension = ( 70 * $per_month ) / 100;
+    		}
+      ?>
+        <p class="message"> Η σύνταξη σας θα είναι <?php echo $pension; ?> ευρώ τον μήνα! Θέλετε να βγείτε σε σύνταξη;</p>
+        <a href= <?php echo $url ?> >
+         <button class="previous_page">Άκυρο</button>
+       </a>
+       <a href="/IKA/pages/profile_applications_pens_result.php">
+         <button class="home_page">Ναι</button>
+       </a>
+      <?php } ?>
+    <?php } else { ?>
+      <p class="message">Αυτή η αίτηση δεν είναι διαθέσιμη για συνταξιούχους!</p>
+    <?php } ?>
 		</div>
 
 <?php } else { ?>

@@ -108,14 +108,18 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			<p class="logout"> ΑΠΟΣΥΝΔΕΣΗ </p>
 		</a>
 
+
 		<div class="edit_cont">
-			<h2 class="app_title">Διαθέσιμες Αιτήσεις:</h2>
-			<a href="/IKA/pages/profile_applications_cld.php" class="app_child"> Αίτηση ασφάλισης τέκνων </a>
-			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
-			<a href="/IKA/pages/profile_applications_pens.php" class="app_pens"> Αίτηση συνταξιοδότησης </a>
-			<?php } ?>
-
-
+      <?php
+        if(  isset( $_POST['Submit'] )  ){//if the submit button is clicked
+          $nochildren = $_POST['quantity'];
+          $total_insured = $rows2['INSURED_CHILDREN'] + $nochildren;
+          $sql= "UPDATE insurance_info SET INSURED_CHILDREN = $total_insured WHERE AFM = $afm ";
+          $result3 = $mysqli->query( $sql );
+        }
+      ?>
+			<p class="message"> Η ασφάλιση τέκνων ήταν επιτυχής! Πλέον έχετε <?php echo $total_insured; ?> ασφαλισμένα τέκνα!</p>
+      <?php header( "refresh:2; url=/IKA/pages/profile_applications_cld.php" ); ?>
 		</div>
 
 <?php } else { ?>

@@ -4,8 +4,15 @@ session_start();
 
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
+if ( isset( $_SESSION['url'] ) ) {
+	$url = $_SESSION['url'];
+} else {
+	$url = "/IKA/index.php";
+}
+
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
 
 
 ?>
@@ -18,6 +25,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications_pens.css" media="screen" />
 
 
 
@@ -109,13 +117,32 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-			<h2 class="app_title">Διαθέσιμες Αιτήσεις:</h2>
-			<a href="/IKA/pages/profile_applications_cld.php" class="app_child"> Αίτηση ασφάλισης τέκνων </a>
-			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
-			<a href="/IKA/pages/profile_applications_pens.php" class="app_pens"> Αίτηση συνταξιοδότησης </a>
-			<?php } ?>
+    <?php if ( $rows2['INSUR_TYPE'] == 0) { ?>
 
-
+			<?php if( $rows2['WORKHOURS'] < 5550 ) { ?>  <!-- Not enough for pension -->
+        <p class="message">Λυπούμαστε, μα δεν έχετε συμπληρώσει τις απαραίτητες εργατοώρες για να βγείτε σε σύνταξη! </p>
+      <?php } else { //calculate pension ammount
+        $pension = 0;
+        $mean_salary = ( $rows2['YEAR1'] + $rows2['YEAR2'] + $rows2['YEAR3'] + $rows2['YEAR4'] + $rows2['YEAR5'] ) / 5;
+        $per_month   = $mean_salary/12;
+        if ( $per_month >= 500 && $per_month < 1000 ){
+    			$pension = ( 90 * $per_month ) / 100;
+    		} elseif ( $per_month >= 1000 && $per_month < 2000 ) {
+    			$pension = ( 80 * $per_month ) / 100;
+    		} elseif ( $per_month >= 2000 ) {
+    			$pension = ( 70 * $per_month ) / 100;
+    		}
+				$insurance_date = date("Y-m-d");
+				echo $insurance_date;
+        $sql= "UPDATE insurance_info SET INSUR_TYPE = 1, PENSION_AMOUNT = $pension, PENS_DATE = '$insurance_date'  WHERE AFM = $afm ";
+        $result3 = $mysqli->query( $sql );
+      ?>
+        <p class="message"> Συγχαρητήρια! Πλέον είστε συνταξιούχος!</p>
+        <?php header( "refresh:2; url=/IKA/pages/profile_applications.php" ); ?>
+      <?php } ?>
+    <?php } else { ?>
+      <p class="message">Αυτή η αίτηση δεν είναι διαθέσιμη για συνταξιούχους!</p>
+    <?php } ?>
 		</div>
 
 <?php } else { ?>
