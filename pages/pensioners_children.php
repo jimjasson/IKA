@@ -101,14 +101,14 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<?php
 		if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
-		<span class="second">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/under_construction.php">περιηγηθείτε στο Προφίλ σας</a></span>.
+		<span class="third">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/under_construction.php">περιηγηθείτε στο Προφίλ σας</a></span>.
 		<?php } else { ?>
-		<span class="second">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/login.php">συνδεθείτε στο Προφίλ σας</a>. Αν
+		<span class="third">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/login.php">συνδεθείτε στο Προφίλ σας</a>. Αν
 			είστε καινούριος χρήστης, πρέπει πρώτα να <a href="/IKA/pages/register.php"> εγγραφείτε στην υπηρεσία</a>.</span>
 		<?php 
 		}
 		?>
-		<span class="third"> Για να υπολογίσετε το ποσό της σύνταξής σας, μπορείτε να χρησιμοποιήσετε τον <a href="/IKA/pages/pensioners_calculation.php"> Υπολογισμό Σύνταξης</a>.</span>
+		<span class="second"> Για να υπολογίσετε το ποσό της σύνταξής σας, μπορείτε να χρησιμοποιήσετε τον <a href="/IKA/pages/pensioners_calculation.php"> Υπολογισμό Σύνταξης</a>.</span>
 
 	</div>
 	

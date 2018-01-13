@@ -41,6 +41,21 @@ require 'calculate_pension.php';
 <!-- Register and Login --> 
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+		$username = $_SESSION[ 'username' ];
+		$sql = "SELECT AFM FROM accounts WHERE USERNAME='$username' ";
+		$result = $mysqli->query( $sql );
+		$afm = $result->fetch_assoc();
+		$afm_value = $afm['AFM'];
+		$sql = "SELECT * FROM insurance_info WHERE AFM='$afm_value' ";
+		$result = $mysqli->query( $sql );
+		$data = $result->fetch_assoc();
+		$hours = $data['WORKHOURS'];
+		$salary1 = $data['YEAR1'];
+		$salary2 = $data['YEAR2'];
+		$salary3 = $data['YEAR3'];
+		$salary4 = $data['YEAR4'];
+		$salary5 = $data['YEAR5'];
+
 	?>
 	<div class="profile_mini_container">
 		<p class="welcome"> Καλωσορίσατε, <?php echo $_SESSION[ 'username' ]; ?> ! </p>
@@ -51,7 +66,14 @@ require 'calculate_pension.php';
 			<p class="logout"> ΑΠΟΣΥΝΔΕΣΗ </p>
 		</a>
 	</div>
-<?php } else { ?>
+<?php } else { 
+	$hours = '';
+	$salary1 = '';
+	$salary2 = '';
+	$salary3 = '';
+	$salary4 = '';
+	$salary5 = '';
+	?>
 <div class="top_corner_register">
 	<a href="/IKA/pages/register.php">
 		 <button class="register_button"><span> Εγγραφή </span></button>
@@ -103,15 +125,15 @@ require 'calculate_pension.php';
 
 		<form class="form" action="/IKA/pages/pensioners_calculation.php" method="post" enctype="multipart/form-data" autocomplete="off">
 			<label for="hours">
-	 		 	Εργατοώρες: <input type="number" class="calculation_input" id="hours" name="hours" required>
+	 		 	Εργατοώρες: <input type="number" min="0" class="calculation_input" id="hours" name="hours" value=<?php echo $hours ?> required>
 			</label>
 			<label for="salary">
 	 		 	Μισθός τελευταίων 5 χρόνων: 
-	 		 	<input type="number" class="calculation_input" id="salary1" name="salary1" required>
-	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary2" name="salary2" required></div>
-				<div class="left_margin"><input type="number" class="calculation_input" id="salary3" name="salary3" required></div>
-	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary4" name="salary4" required></div>
-	 		 	<div class="left_margin"><input type="number" class="calculation_input" id="salary5" name="salary5" required></div>
+	 		 	<input type="number" class="calculation_input" id="salary1" name="salary1" value=<?php echo $salary1 ?> required>
+	 		 	<div class="left_margin"><input type="number" min="0" class="calculation_input" id="salary2" name="salary2" value=<?php echo $salary2 ?> required></div>
+				<div class="left_margin"><input type="number" min="0" class="calculation_input" id="salary3" name="salary3" value=<?php echo $salary3 ?> required></div>
+	 		 	<div class="left_margin"><input type="number" min="0" class="calculation_input" id="salary4" name="salary4" value=<?php echo $salary4 ?> required></div>
+	 		 	<div class="left_margin"><input type="number" min="0" class="calculation_input" id="salary5" name="salary5" value=<?php echo $salary5 ?> required></div>
 			</label>
 			<label for="pension_type">
 				Τύπος Σύνταξης: <input type="radio" class="calculation_input" value="age_pension" name="radio" checked> Γήρατος 
