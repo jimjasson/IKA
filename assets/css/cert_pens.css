@@ -1,0 +1,58 @@
+.title{
+  top: 2%;
+  left: 17%;
+  font-size: 26px;
+  font-family: 'Didact Gothic', sans-serif;
+  position: absolute;
+}
+
+.text{
+  top: 15%;
+  left: 15%;
+  font-size: 18px;
+  font-family: 'Didact Gothic', sans-serif;
+  position: absolute;
+}
+
+
+.print_page {
+  top: 40%;
+  left: 25%;
+  position: absolute;
+  border-radius: 4px;
+  background-color: #FF866D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 20%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.print_page span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.print_page span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.print_page:hover span {
+  padding-right: 25px;
+}
+
+.print_page:hover span:after {
+  opacity: 1;
+  right: 0;
+}

@@ -2,10 +2,17 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Φιλοξενητής: localhost
 -- Χρόνος δημιουργίας: 13 Ιαν 2018 στις 19:25:36
 -- Έκδοση διακομιστή: 10.1.28-MariaDB
 -- Έκδοση PHP: 7.1.11
+=======
+-- Host: 127.0.0.1
+-- Generation Time: Jan 13, 2018 at 05:15 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.1.12
+>>>>>>> master:IKA.sql
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +26,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Βάση δεδομένων: `sdi1400220`
+=======
+-- Database: `ika`
+>>>>>>> master:IKA.sql
 --
 
 -- --------------------------------------------------------
 
 --
--- Δομή πίνακα για τον πίνακα `accounts`
+-- Table structure for table `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -40,7 +51,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Άδειασμα δεδομένων του πίνακα `accounts`
+-- Dumping data for table `accounts`
 --
 
 INSERT INTO `accounts` (`NAME`, `SURNAME`, `FATHER_NAME`, `MOTHER_NAME`, `AFM`, `EMAIL`, `USERNAME`, `PASSWORD`) VALUES
@@ -51,7 +62,11 @@ INSERT INTO `accounts` (`NAME`, `SURNAME`, `FATHER_NAME`, `MOTHER_NAME`, `AFM`, 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Δομή πίνακα για τον πίνακα `insurance_info`
+=======
+-- Table structure for table `insurance_info`
+>>>>>>> master:IKA.sql
 --
 
 CREATE TABLE `insurance_info` (
@@ -72,7 +87,11 @@ CREATE TABLE `insurance_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Άδειασμα δεδομένων του πίνακα `insurance_info`
+=======
+-- Dumping data for table `insurance_info`
+>>>>>>> master:IKA.sql
 --
 
 INSERT INTO `insurance_info` (`AFM`, `BIRTH_DATE`, `INSUR_DATE`, `PENS_DATE`, `WORKHOURS`, `INSUR_TYPE`, `CHILDREN`, `PENSION_AMOUNT`, `INSURED_CHILDREN`, `YEAR1`, `YEAR2`, `YEAR3`, `YEAR4`, `YEAR5`) VALUES
@@ -81,18 +100,30 @@ INSERT INTO `insurance_info` (`AFM`, `BIRTH_DATE`, `INSUR_DATE`, `PENS_DATE`, `W
 ('987654321', '1956-10-10', '1980-10-10', '0000-00-00', 6000, 0, 2, 0, 0, 11000, 11000, 16000, 16000, 16500);
 
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Ευρετήρια για άχρηστους πίνακες
 --
 
 --
 -- Ευρετήρια για πίνακα `accounts`
+=======
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `accounts`
+>>>>>>> master:IKA.sql
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`AFM`),
   ADD UNIQUE KEY `USERNAME` (`USERNAME`);
 
 --
+<<<<<<< HEAD:sdi1400220.sql
 -- Ευρετήρια για πίνακα `insurance_info`
+=======
+-- Indexes for table `insurance_info`
+>>>>>>> master:IKA.sql
 --
 ALTER TABLE `insurance_info`
   ADD PRIMARY KEY (`AFM`);

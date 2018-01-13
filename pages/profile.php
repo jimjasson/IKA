@@ -2,10 +2,20 @@
 
 session_start();
 
+<<<<<<< HEAD
 $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 ?>
 
+=======
+$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
+
+
+?>
+>>>>>>> master
 <html>
 <title>ΠΡΟΦΙΛ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
@@ -25,6 +35,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 	</a>
 </div>
 
+<<<<<<< HEAD
 <div class="top_contact">
 	<p class="title"> Κάλεσέ μας! </p>
 	<img src="/IKA/data/images/phone.png">
@@ -36,6 +47,8 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 	<img src="/IKA/data/images/office.png">
 </div>
 
+=======
+>>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -72,6 +85,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
+<<<<<<< HEAD
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
@@ -82,6 +96,15 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 		<a href="/IKA/pages/under_construction.php">
 		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
 		</a>
+=======
+		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li>
+			<form action="#" method="get"> </li>
+			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
+		 </form>
+>>>>>>> master
 	</ul>
 </div>
 
@@ -133,6 +156,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 			<p class ="new_name">Νέο όνομα χρήστη:</p>
 			<p class ="new_email">Νέο email:</p>
 			<p class ="new_password">Νέο password:</p>
+<<<<<<< HEAD
 			<form class="form" action="/IKA/pages/under_construction.php" method="post" enctype="multipart/form-data" autocomplete="off">
 				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" required />
 				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" required />
@@ -141,6 +165,76 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 				<input type="submit" class="change_input" value="Αλλαγή" name="register" />
 				</div>
 			</form>
+=======
+			<form class="form" action="/IKA/pages/profile.php" method="post" enctype="multipart/form-data" autocomplete="off">
+				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" />
+				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" />
+				<input type="password"  class="change_input" placeholder="Νέο password"  id="password" name="password"  />
+				<input type="password"  class="change_input" placeholder="Επιβεβαίωση" id="confirm_password" name="confirm_password"  />
+				<input type="submit" class="change_input" value="Αλλαγή" name="Change" />
+			</form>
+			<?php if( isset( $_POST['Change']) ) {
+				$correct = true;
+				$new_username = " ";
+				$new_email = " ";
+				$new_password = " ";
+				if( isset( $_POST['username'])  ){
+					$new_username = $_POST['username'];
+					$sql = "SELECT * FROM accounts WHERE USERNAME='$new_username' ";
+					$result = $mysqli->query( $sql );
+					if( $result->num_rows > 0 ){	//error
+						$correct = false;
+						$message = "Αυτό το username χρησιμοποιείται ήδη!";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+					}
+				}
+				if( isset( $_POST['email']) ){
+					$new_email = $_POST['email'];
+				}
+				if( isset( $_POST['password']) ){
+					if( isset( $_POST['confirm_password']) )
+					{
+						if ($_POST["password"] === $_POST["confirm_password"]){
+								$new_password = $_POST["password"];
+						}
+						else {
+							$correct = false;
+							$message = "Ο κωδικός επαλήθευσης δεν ταιριάζει με τον αρχικό κωδικό!";
+							echo "<script type='text/javascript'>alert('$message');</script>";
+						}
+					}
+					else {
+						$correct = false;
+						$message = "Πρέπει να συμπληρώσετε και τον κωδικό επαλήθευσης!";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+					}
+				}
+
+				if( $correct == true ){	//update
+					if( $new_username > " " ){
+						$sql = "UPDATE accounts SET USERNAME = '$new_username' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+					}
+					if( $new_email > " " ){
+						$sql = "UPDATE accounts SET EMAIL = '$new_email' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+					}
+					if( $new_password > " " ){
+						$sql = "UPDATE accounts SET PASSWORD = '$new_password' WHERE AFM = '$afm' ";
+						$results3 = $mysqli->query($sql);
+						$_SESSION["username"] = $new_username;
+					}
+					$message = $_SESSION['username'] ;
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+				else {	//error
+					$message = "Δεν έγινε αλλαγή των στοιχεία σας!";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+			}
+
+			?>
+>>>>>>> master
     </div>
 <?php } else { ?>
 			<div class="login_cont">
@@ -166,6 +260,7 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -173,6 +268,9 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 
 <!-- Footer --> 
+=======
+<!-- Footer -->
+>>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -183,7 +281,14 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
+<<<<<<< HEAD
 			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
+=======
+			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
+		</div>
+		<div class="sitemap">
+			<p class="title"> Sitemap </p>
+>>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -197,4 +302,8 @@ $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> master

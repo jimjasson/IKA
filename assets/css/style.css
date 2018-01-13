@@ -76,7 +76,11 @@
 }
 
 .home_left_menu{
+<<<<<<< HEAD
   top: 39%;
+=======
+  top: 34%;
+>>>>>>> master
   bottom: 15%;
   left: 6%;
   width: 20%;
@@ -111,7 +115,11 @@
 }
 
 .employers{
+<<<<<<< HEAD
   top: 69%;
+=======
+  top: 64%;
+>>>>>>> master
   bottom: 15%;
   left: 6%;
   width: 20%;
@@ -146,7 +154,11 @@
 }
 
 .home_right_menu{
+<<<<<<< HEAD
   top: 39%;
+=======
+  top: 34%;
+>>>>>>> master
   bottom: 15%;
   left: 27%;
   width: 20%;
@@ -181,7 +193,11 @@
 }
 
 .foreis{
+<<<<<<< HEAD
   top: 69%;
+=======
+  top: 64%;
+>>>>>>> master
   bottom: 15%;
   left: 27%;
   width: 20%;
@@ -218,7 +234,11 @@
 .notification_banner {
   width: 20.7%;
   position: absolute;
+<<<<<<< HEAD
   top: 39%;
+=======
+  top: 34%;
+>>>>>>> master
   left: 48%;
   height: 14%;
   background-color: #9EB5A8;
@@ -235,9 +255,15 @@
 }
 
 .notification_banner_border {
+<<<<<<< HEAD
   width: 20.3%;
   position: absolute;
   top: 53%;
+=======
+  width: 20.1%;
+  position: absolute;
+  top: 48%;
+>>>>>>> master
   left: 48%;
   height: 13.3%;
   background-color: white;
@@ -266,8 +292,13 @@
 }
 
 .sidebar {
+<<<<<<< HEAD
   top: 30%;
   left: 75%;
+=======
+  top: 25%;
+  left: 78%;
+>>>>>>> master
   width:20%;
   height: auto;
   position: absolute;
@@ -310,7 +341,11 @@
 }
 
 .footer{
+<<<<<<< HEAD
   top: 109%;
+=======
+  top: 98%;
+>>>>>>> master
   width: 100%;
   height: auto;
   position: absolute;
@@ -454,7 +489,11 @@
 #top_nav_menu ul li {
   display: inline-block;
   padding: 0;
+<<<<<<< HEAD
   width: 14.4%;
+=======
+  width: 14%;
+>>>>>>> master
   margin: 0;
 }
 #top_nav_menu.align-right ul li {

@@ -75,6 +75,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<ul>
 		 <li><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li class='active'><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
+<<<<<<< HEAD
 		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
@@ -84,6 +85,14 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<a href="/IKA/pages/under_construction.php">
 		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
 		</a>
+=======
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li> 
+			<form action="#" method="get"> </li>
+			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+		 </form>
+>>>>>>> master
 	</ul>
 </div>
 

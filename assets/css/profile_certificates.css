@@ -134,6 +134,13 @@
   color: red;
 }
 
+<<<<<<< HEAD
+=======
+.profile_cont .logout:hover{
+	text-decoration: underline;
+}
+
+>>>>>>> master
 .profile_cont .edit_cont{
   top: 25%;
 	width: 72%;
@@ -144,6 +151,35 @@
   border-style: solid;
 }
 
+<<<<<<< HEAD
+=======
+
+.profile_cont .edit_cont .beb_title{
+	left: 5%;
+	top: 5%;
+	font-size: 26px;
+	font-family: 'Didact Gothic', sans-serif;
+	position: absolute;
+}
+
+.profile_cont .edit_cont .beb1:link{
+	left: 5%;
+	top: 45%;
+	font-size: 18px;
+	font-family: 'Didact Gothic', sans-serif;
+	color: green;
+	position: absolute;
+}
+
+.profile_cont .edit_cont .beb1:visited{
+	color: darkgreen;
+}
+
+.profile_cont .edit_cont .beb1:hover{
+	color: red;
+}
+
+>>>>>>> master
 /* If not logged in */
 
 .login_cont{

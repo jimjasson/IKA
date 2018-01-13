@@ -2,29 +2,30 @@
 
 session_start();
 
-<<<<<<< HEAD
-$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
-
-?>
-
-=======
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+
+if ( isset( $_SESSION['url'] ) ) {
+	$url = $_SESSION['url'];
+} else {
+	$url = "/IKA/index.php";
+}
+
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
 ?>
->>>>>>> master
 <html>
-<title>ΠΡΟΦΙΛ - ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ | ΙΚΑ</title>
+<title>ΠΡΟΦΙΛ - ΑΙΤΗΣΕΙΣ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
 
 
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_info.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications_pens.css" media="screen" />
 
 
 
@@ -35,20 +36,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</a>
 </div>
 
-<<<<<<< HEAD
-<div class="top_contact">
-	<p class="title"> Κάλεσέ μας! </p>
-	<img src="/IKA/data/images/phone.png">
-	<p class="number"> 2101234567 </p>
-</div>
-
-<div class="store">
-	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
-	<img src="/IKA/data/images/office.png">
-</div>
-
-=======
->>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -85,18 +72,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-<<<<<<< HEAD
-		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
-		 <li class='last'> 
-		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-			</li>
-		<a href="/IKA/pages/under_construction.php">
-		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
-		</a>
-=======
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li>
@@ -104,7 +79,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
 				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
 		 </form>
->>>>>>> master
 	</ul>
 </div>
 
@@ -121,7 +95,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     $result = $mysqli->query( $sql );
     $rows = $result->fetch_assoc();
 		$afm = $rows['AFM'];
-		$sql = "SELECT *, DATE_FORMAT(BIRTH_DATE, '%d/%m/%Y') as MY_BIRTH_DATE, DATE_FORMAT(INSUR_DATE, '%d/%m/%Y') as MY_INSUR_DATE FROM insurance_info WHERE AFM='$afm' ";
+		$sql = "SELECT *, DATE_FORMAT(BIRTH_DATE, '%d/%m/%Y') as MY_BIRTH_DATE FROM insurance_info WHERE AFM='$afm' ";
 		$result = $mysqli->query( $sql );
 		$rows2 = $result->fetch_assoc();
     ?>
@@ -143,15 +117,34 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-			<h2 class="plir_title">Πληροφορίες Ασφάλισης</h2>
-			<p class="plir_text"> Έναρξη Ασφάλισης: <?php echo $rows2['MY_INSUR_DATE']; ?> </p>
-			<p class="plir_worktext"> Μέχρι και σήμερα έχετε συμπληρώσει <?php echo $rows2['WORKHOURS']; ?>  εργατοώρες!	</p>
-<<<<<<< HEAD
-			<p class="plir_childtext"> Έχετε <?php echo $rows2['CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
-=======
-			<p class="plir_childtext"> Έχετε <?php echo $rows2['INSURED_CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
->>>>>>> master
+    <?php if ( $rows2['INSUR_TYPE'] == 0) { ?>
+
+			<?php if( $rows2['WORKHOURS'] < 5550 ) { ?>  <!-- Not enough for pension -->
+        <p class="message">Λυπούμαστε, μα δεν έχετε συμπληρώσει τις απαραίτητες εργατοώρες για να βγείτε σε σύνταξη! </p>
+      <?php } else { //calculate pension ammount
+        $pension = 0;
+        $mean_salary = ( $rows2['YEAR1'] + $rows2['YEAR2'] + $rows2['YEAR3'] + $rows2['YEAR4'] + $rows2['YEAR5'] ) / 5;
+        $per_month   = $mean_salary/12;
+        if ( $per_month >= 500 && $per_month < 1000 ){
+    			$pension = ( 90 * $per_month ) / 100;
+    		} elseif ( $per_month >= 1000 && $per_month < 2000 ) {
+    			$pension = ( 80 * $per_month ) / 100;
+    		} elseif ( $per_month >= 2000 ) {
+    			$pension = ( 70 * $per_month ) / 100;
+    		}
+				$insurance_date = date("Y-m-d");
+				echo $insurance_date;
+        $sql= "UPDATE insurance_info SET INSUR_TYPE = 1, PENSION_AMOUNT = $pension, PENS_DATE = '$insurance_date'  WHERE AFM = $afm ";
+        $result3 = $mysqli->query( $sql );
+      ?>
+        <p class="message"> Συγχαρητήρια! Πλέον είστε συνταξιούχος!</p>
+        <?php header( "refresh:2; url=/IKA/pages/profile_applications.php" ); ?>
+      <?php } ?>
+    <?php } else { ?>
+      <p class="message">Αυτή η αίτηση δεν είναι διαθέσιμη για συνταξιούχους!</p>
+    <?php } ?>
 		</div>
+
 <?php } else { ?>
 		<div class="login_cont">
 			<div class="login_alert">
@@ -174,14 +167,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
   </div>
 
-<<<<<<< HEAD
-<!-- Footer --> 
-=======
-
-
 
 <!-- Footer -->
->>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -192,14 +179,10 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-<<<<<<< HEAD
-			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
-=======
 			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
 		</div>
 		<div class="sitemap">
 			<p class="title"> Sitemap </p>
->>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -213,8 +196,4 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> master

@@ -2,29 +2,24 @@
 
 session_start();
 
-<<<<<<< HEAD
-$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
-
-?>
-
-=======
 $mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
 ?>
->>>>>>> master
 <html>
-<title>ΠΡΟΦΙΛ - ΠΛΗΡΟΦΟΡΙΕΣ ΑΣΦΑΛΙΣΗΣ | ΙΚΑ</title>
+<title>ΠΡΟΦΙΛ - ΑΙΤΗΣΕΙΣ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
 
 
 <head>
 
 <link rel="stylesheet" type="text/css" href="/IKA/assets/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_info.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/IKA/assets/css/profile_applications_cld.css" media="screen" />
 
 
 
@@ -35,20 +30,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</a>
 </div>
 
-<<<<<<< HEAD
-<div class="top_contact">
-	<p class="title"> Κάλεσέ μας! </p>
-	<img src="/IKA/data/images/phone.png">
-	<p class="number"> 2101234567 </p>
-</div>
-
-<div class="store">
-	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
-	<img src="/IKA/data/images/office.png">
-</div>
-
-=======
->>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -85,18 +66,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-<<<<<<< HEAD
-		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
-		 <li class='last'> 
-		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-			</li>
-		<a href="/IKA/pages/under_construction.php">
-		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
-		</a>
-=======
 		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li>
@@ -104,7 +73,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
 				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
 		 </form>
->>>>>>> master
 	</ul>
 </div>
 
@@ -121,7 +89,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     $result = $mysqli->query( $sql );
     $rows = $result->fetch_assoc();
 		$afm = $rows['AFM'];
-		$sql = "SELECT *, DATE_FORMAT(BIRTH_DATE, '%d/%m/%Y') as MY_BIRTH_DATE, DATE_FORMAT(INSUR_DATE, '%d/%m/%Y') as MY_INSUR_DATE FROM insurance_info WHERE AFM='$afm' ";
+		$sql = "SELECT *, DATE_FORMAT(BIRTH_DATE, '%d/%m/%Y') as MY_BIRTH_DATE FROM insurance_info WHERE AFM='$afm' ";
 		$result = $mysqli->query( $sql );
 		$rows2 = $result->fetch_assoc();
     ?>
@@ -143,15 +111,26 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-			<h2 class="plir_title">Πληροφορίες Ασφάλισης</h2>
-			<p class="plir_text"> Έναρξη Ασφάλισης: <?php echo $rows2['MY_INSUR_DATE']; ?> </p>
-			<p class="plir_worktext"> Μέχρι και σήμερα έχετε συμπληρώσει <?php echo $rows2['WORKHOURS']; ?>  εργατοώρες!	</p>
-<<<<<<< HEAD
-			<p class="plir_childtext"> Έχετε <?php echo $rows2['CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
-=======
-			<p class="plir_childtext"> Έχετε <?php echo $rows2['INSURED_CHILDREN']; ?> ασφαλισμένα τέκνα! </p>
->>>>>>> master
+      <h2 class="cld_title">Ασφάλιση Τέκνων:</h2>
+      <p class="cld_text">Έχετε <?php echo $rows2['CHILDREN']; ?> τέκνα και <?php echo $rows2['INSURED_CHILDREN']; ?> από αυτά είναι ασφαλισμένα.</br>Εισάγετε αριθμό τέκνων προς ασφάλιση.</p>
+      <form class="cld_form" action="/IKA/pages/profile_applications_cld_result.php" method="post">
+        <input type="number" name="quantity" min="0" max="<?php echo $rows2['CHILDREN'] - $rows2['INSURED_CHILDREN']; ?>">
+        <div id="submit_register_button" class="submit_button">
+  				<input type="submit" value="Υποβολή" class="cld_button" name="Submit" />
+  			</div>
+      </form>
+      <?php
+      	if(  isset( $_POST['Submit'] )  ){//if the submit button is clicked
+          $nochildren = $_POST['quantity'];
+          $total_insured = $rows2['INSURED_CHILDREN'] + $nochildren;
+          $sql= "UPDATE insurance_info SET INSURED_CHILDREN = $total_insured WHERE AFM = $afm ";
+          $result3 = $mysqli->query( $sql );
+
+      	}
+      ?>
+
 		</div>
+
 <?php } else { ?>
 		<div class="login_cont">
 			<div class="login_alert">
@@ -174,14 +153,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
   </div>
 
-<<<<<<< HEAD
-<!-- Footer --> 
-=======
-
-
 
 <!-- Footer -->
->>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -192,14 +165,10 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-<<<<<<< HEAD
-			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
-=======
 			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
 		</div>
 		<div class="sitemap">
 			<p class="title"> Sitemap </p>
->>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -213,8 +182,4 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> master
