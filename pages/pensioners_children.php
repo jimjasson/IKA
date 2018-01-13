@@ -101,7 +101,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<?php
 		if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
-		<span class="third">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/under_construction.php">περιηγηθείτε στο Προφίλ σας</a></span>.
+		<span class="third">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/profile.php">περιηγηθείτε στο Προφίλ σας</a></span>.
 		<?php } else { ?>
 		<span class="third">Για να δείτε πόσα ένσημα έχετε συγκεντρώσει πρέπει να <a href="/IKA/pages/login.php">συνδεθείτε στο Προφίλ σας</a>. Αν
 			είστε καινούριος χρήστης, πρέπει πρώτα να <a href="/IKA/pages/register.php"> εγγραφείτε στην υπηρεσία</a>.</span>
