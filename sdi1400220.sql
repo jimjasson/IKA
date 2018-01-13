@@ -45,7 +45,6 @@ INSERT INTO `accounts` (`NAME`, `SURNAME`, `FATHER_NAME`, `MOTHER_NAME`, `AFM`, 
 
 
 -- Table structure for table `insurance_info`
->>>>>>> master:IKA.sql
 --
 
 CREATE TABLE `insurance_info` (
