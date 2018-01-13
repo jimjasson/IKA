@@ -147,7 +147,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     			$pension = ( 70 * $per_month ) / 100;
     		}
 				$insurance_date = date("Y-m-d");
-				echo $insurance_date;
+				
         $sql= "UPDATE insurance_info SET INSUR_TYPE = 1, PENSION_AMOUNT = $pension, PENS_DATE = '$insurance_date'  WHERE AFM = $afm ";
         $result3 = $mysqli->query( $sql );
       ?>
