@@ -123,7 +123,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<div class="notification_banner_border">
 	<?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		?>
-		<div class="top"> Είναι <a href="/IKA/pages/profile_info.php" style="color:#9EB5A8"> στο προφίλ σου </a>!</div>
+		<div class="top"> Είναι <a href="/IKA/pages/profile_info.php" style="color:#9EB5A8"> στο προφίλ σου</a>!</div>
 		<?php } else { ?>
 			<div class="top"> Είναι στο προφίλ σου!</div>
 			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
