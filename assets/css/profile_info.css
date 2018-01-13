@@ -134,6 +134,11 @@
   color: red;
 }
 
+.profile_cont .logout:hover{
+	text-decoration: underline;
+}
+
+
 .profile_cont .edit_cont{
   top: 25%;
 	width: 72%;

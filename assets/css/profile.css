@@ -255,6 +255,17 @@ input[type="submit"].change_input{
   top: 80%;
   left: 40%;
   position: absolute;
+  border-radius: 4px;
+  background-color: #FF866D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 20%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
 }
 
 

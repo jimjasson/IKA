@@ -144,6 +144,64 @@
   border-style: solid;
 }
 
+.profile_cont .logout:hover{
+	text-decoration: underline;
+}
+
+
+.profile_cont .edit_cont .app_title{
+	left: 5%;
+	top: 5%;
+	font-size: 26px;
+	font-family: 'Didact Gothic', sans-serif;
+	position: absolute;
+}
+
+.profile_cont .edit_cont .app_child:link{
+	left: 5%;
+	top: 40%;
+	font-size: 18px;
+	font-family: 'Didact Gothic', sans-serif;
+	color: green;
+	position: absolute;
+}
+
+.profile_cont .edit_cont .app_child:visited{
+	color: darkgreen;
+}
+
+.profile_cont .edit_cont .app_child:hover{
+	color: red;
+}
+
+.profile_cont .edit_cont .app_pens:link{
+	left: 5%;
+	top: 60%;
+	font-size: 18px;
+	font-family: 'Didact Gothic', sans-serif;
+	color: green;
+	position: absolute;
+}
+
+.profile_cont .edit_cont .app_pens:visited{
+	color: darkgreen;
+}
+
+.profile_cont .edit_cont .app_pens:hover{
+	color: red;
+}
+
+
+
+.profile_cont .edit_cont .message{
+	top: 35%;
+	left: 5%;
+	font-size: 22px;
+	font-family: 'Didact Gothic', sans-serif;
+	position: absolute;
+}
+
+
 /* If not logged in */
 
 .login_cont{
