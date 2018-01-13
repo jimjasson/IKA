@@ -23,6 +23,9 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 		} else {
 			header( "location: /IKA/index.php" );
 		}
+	} else {
+		$message = "Τα στοιχεία που δώσατε δεν αντιστοιχούν σε κάποιον εγγεγραμμένο χρήστη.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 }
 

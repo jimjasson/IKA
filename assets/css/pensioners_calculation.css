@@ -1,10 +1,10 @@
 .calculation_form{
     width:35%;
-    height:56%;
+    height:70%;
     left:25%;
     position: absolute;
     background-color: #F2F2F2;
-    top:29%;
+    top:37%;
 }
 
 .calculation_form .title{

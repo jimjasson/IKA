@@ -1,10 +1,10 @@
 .results_form{
     width:35%;
-    height:25%;
+    height:27%;
     left:25%;
     position: absolute;
     background-color: #F2F2F2;
-    top:35%;
+    top:45%;
 }
 
 .results_form .title{

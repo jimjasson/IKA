@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
@@ -27,13 +27,26 @@ require 'calculate_pension.php';
 	</a>
 </div>
 
+<div class="top_contact">
+	<p class="title"> Κάλεσέ μας! </p>
+	<img src="/IKA/data/images/phone.png">
+	<p class="number"> 2101234567 </p>
+</div>
+
+<div class="store">
+	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
+	<img src="/IKA/data/images/office.png">
+</div>
+
 <!-- Register and Login --> 
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	?>
 	<div class="profile_mini_container">
 		<p class="welcome"> Καλωσορίσατε, <?php echo $_SESSION[ 'username' ]; ?> ! </p>
-		<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		<a href="/IKA/pages/profile.php">
+			<p class="my_profile"> ΤΟ ΠΡΟΦΙΛ ΜΟΥ </p>
+		</a>
 		<a href="/IKA/pages/logout.php">
 			<p class="logout"> ΑΠΟΣΥΝΔΕΣΗ </p>
 		</a>
@@ -63,12 +76,15 @@ require 'calculate_pension.php';
 	<ul>
 		 <li><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='active last'><a href='#'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li> 
-			<form action="#" method="get"> </li>
-			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
-		 </form>
+		 <li class='active last'><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
+		 <li class='last'> 
+		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+			</li>
+		<a href="/IKA/pages/under_construction.php">
+		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+		</a>
 	</ul>
 </div>
 
@@ -123,10 +139,7 @@ require 'calculate_pension.php';
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
-		</div>
-		<div class="sitemap">
-			<p class="title"> Sitemap </p>
+			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>

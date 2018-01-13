@@ -2,7 +2,7 @@
 
 session_start();
 
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
+$mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
 
 require 'validate.php';
 ?>
@@ -24,10 +24,10 @@ require 'validate.php';
 			var is_valid = only_letters_and_spaces.test( input.val() )
 			if( ! is_valid ) {
 				$( '#name_error' ).show()
-				$( '#submit_register_button').hide()
+				document.getElementById("submit_button").disabled = true;
 			} else {
 				$( '#name_error' ).hide()
-				$( '#submit_register_button').show()
+				document.getElementById("submit_button").disabled = false;
 			}
 		});
 
@@ -37,10 +37,10 @@ require 'validate.php';
 			var is_valid = only_letters_and_spaces.test( input.val() )
 			if( ! is_valid ) {
 				$( '#surname_error' ).show()
-				$( '#submit_register_button').hide()
+				document.getElementById("submit_button").disabled = true;
 			} else {
 				$( '#surname_error' ).hide()
-				$( '#submit_register_button').show()
+				document.getElementById("submit_button").disabled = false;
 			}
 		});
 
@@ -51,10 +51,10 @@ require 'validate.php';
 
 			if( ! is_valid ) {
 				$( '#father_name_error' ).show()
-				$( '#submit_register_button').hide()
+				document.getElementById("submit_button").disabled = true;
 			} else {
 				$( '#father_name_error' ).hide()
-				$( '#submit_register_button').show()
+				document.getElementById("submit_button").disabled = false;
 			}
 		});
 
@@ -64,10 +64,10 @@ require 'validate.php';
 			var is_valid = only_letters_and_spaces.test( input.val() )
 			if( ! is_valid ) {
 				$( '#mother_name_error' ).show()
-				$( '#submit_register_button').hide()
+				document.getElementById("submit_button").disabled = true;
 			} else {
 				$( '#mother_name_error' ).hide()
-				$( '#submit_register_button').show()
+				document.getElementById("submit_button").disabled = false;
 			}
 		});
 
@@ -77,10 +77,10 @@ require 'validate.php';
 			var is_valid = only_letters_and_spaces.test( input.val() )
 			if( ! is_valid ) {
 				$( '#afm_error' ).show()
-				$( '#submit_register_button').hide()
+				document.getElementById("submit_button").disabled = true;
 			} else {
 				$( '#afm_error' ).hide()
-				$( '#submit_register_button').show()
+				document.getElementById("submit_button").disabled = false;
 			}
 		});
 
@@ -90,10 +90,10 @@ require 'validate.php';
 			if( ! empty( input.val() ) ) {
 				if( confirm_password != password ) {
 					$( '#password_error' ).show()
-					$( '#submit_register_button').hide()
+					document.getElementById("submit_button").disabled = true;
 				} else {
 					$( '#password_error' ).hide()
-					$( '#submit_register_button').show()
+					document.getElementById("submit_button").disabled = false;
 				}
 			}
 		});
@@ -104,10 +104,10 @@ require 'validate.php';
 			if ( '' !== input.val() ) {
 				if( confirm_password != password ) {
 					$( '#password_error' ).show()
-					$( '#submit_register_button').hide()
+					document.getElementById("submit_button").disabled = true;
 				} else {
 					$( '#password_error' ).hide()
-					$( '#submit_register_button').show()
+					document.getElementById("submit_button").disabled = false;
 				}
 			}
 		});
@@ -134,6 +134,17 @@ require 'validate.php';
 	</a>
 </div>
 
+<div class="top_contact">
+	<p class="title"> Κάλεσέ μας! </p>
+	<img src="/IKA/data/images/phone.png">
+	<p class="number"> 2101234567 </p>
+</div>
+
+<div class="store">
+	<p class="title"> Βρες μας σ' ένα <a href="/IKA/pages/under_construction.php"> κατάστημα</a>! </p>
+	<img src="/IKA/data/images/office.png">
+</div>
+
 <!-- Register and Login --> 
 
 <?php
@@ -147,11 +158,6 @@ require 'validate.php';
 		</a>
 	</div>
 <?php } else { ?>
-<div class="top_corner_register">
-	<a href="/IKA/pages/register.php">
-		 <button class="register_button"><span> Εγγραφή </span></button>
-	</a>
-</div>
 <div class="top_corner_login">
 	<a href="/IKA/pages/login.php">
 	<button class="login_button"><span> Σύνδεση </span></button>
@@ -171,33 +177,36 @@ require 'validate.php';
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li> 
-			<form action="#" method="get"> </li>
-			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
-		 </form>
+		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/under_construction.php'><span>ΦΟΡΕΙΣ</span></a></li>
+		 <li class='last'> 
+		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+			</li>
+		<a href="/IKA/pages/under_construction.php">
+		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+		</a>
 	</ul>
 </div>
 
 <div class="home_menu_wrapper">
 	
-	<div id="name_error" class="name_error">
+	<div id="name_error" class="error">
 		<div class="content"> Το Όνομα μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά. </div>
 	</div>
-	<div id="surname_error" class="surname_error">
+	<div id="surname_error" class="error">
 		<div class="content"> Το Επίθετο μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά. </div>
 	</div>
-	<div id="father_name_error" class="father_name_error">
+	<div id="father_name_error" class="error">
 		<div class="content"> Το Όνομα Πατρός μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά. </div>
 	</div>
-	<div id="mother_name_error" class="mother_name_error">
+	<div id="mother_name_error" class="error">
 		<div class="content"> Το Όνομα Μητρός μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά. </div>
 	</div>
-	<div id="afm_error" class="afm_error">
+	<div id="afm_error" class="error">
 		<div class="content"> Το Α.Φ.Μ. μπορεί να περιέχει ακριβώς 9 ψηφία. </div>
 	</div>
-	<div id="password_error" class="password_error">
+	<div id="password_error" class="error">
 		<div class="content"> Ασυμφωνία κωδικών πρόσβασης. </div>
 	</div>
  <div class="register_form">
@@ -205,17 +214,22 @@ require 'validate.php';
 	<div class="title"> Εγγραφή νέου χρήστη </div>
 
 	<form class="form" action="/IKA/pages/register.php" method="post" enctype="multipart/form-data" autocomplete="off">
-		<input type="text"  class="register_input" placeholder="Όνομα" id="name" name="name" required />
-		<input type="text"  class="register_input" placeholder="Επώνυμο" id="surname" name="surname" required />
-		<input type="text"  class="register_input" placeholder="Όνομα Πατρός" id="father_name" name="father_name" required />
-		<input type="text"  class="register_input" placeholder="Όνομα Μητρός" id="mother_name" name="mother_name" required />
-		<input type="text"  class="register_input" placeholder="Α.Φ.Μ." id="afm" name="afm" required />
-		<input type="email"  class="register_input" placeholder="E-mail" name="email" required />
-		<input type="text"  class="register_input" placeholder="Όνομα χρήστη (username)" name="username" required />
-		<input type="password"  class="register_input" placeholder="Κωδικός Πρόσβασης" id="password" name="password" required />
-		<input type="password"  class="register_input" placeholder="Επιβεβαίωση Κωδικού Πρόσβασης" id="confirm_password" name="confirm_password" required />
+		<div class="column">
+		<label for="name"> Όνομα </label> <div class="tooltip"><input type="text"  class="register_input" id="name" name="name" required /> <span class="tooltiptext"> Το Όνομα μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά.</span> </div> <br>
+		<label for="surname"> Επώνυμο </label>  <div class="tooltip"> <input type="text"  class="register_input" id="surname" name="surname" required /> <span class="tooltiptext"> Το Επίθετο μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά.</span> </div>  <br>
+		<label for="father_name"> Όνομα Πατρός  </label> <div class="tooltip"> <input type="text"  class="register_input" id="father_name" name="father_name" required /> <span class="tooltiptext"> Το Όνομα Πατρός μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά.</span> </div> <br>
+		<label for="mother_name"> Όνομα Μητρός </label> <div class="tooltip"> <input type="text"  class="register_input"  id="mother_name" name="mother_name" required /> <span class="tooltiptext"> Το Όνομα Μητρός μπορεί να περιέχει μόνο λατινικούς χαρακτήρες και κενά.</span> </div> <br>
+		<label for="afm"> Α.Φ.Μ. </label> <div class="tooltip"> <input type="text"  class="register_input" id="afm" name="afm" required />  <br>
+		<span class="tooltiptext"> Το Α.Φ.Μ. πρέπει να περιέχει ακριβώς 9 ψηφία.</span> </div></div>
+		<div class="column">
+		<label for="email"> E-mail </label> <input type="email"  class="register_input" name="email" required />  <br>
+		<label for="username"> Username </label> <input type="text" class="register_input"  name="username" required /> <br>
+		<label for="password"> Κωδικός Πρόσβασης </label><input type="password"  class="register_input"  id="password" name="password" required /> <br>
+		<label for="confirm_password"> Επιβεβαίωση κωδικού πρόσβασης </label> <input type="password"  class="register_input"  id="confirm_password" name="confirm_password" required /> <br>
+		
 		<div id="submit_register_button" class="submit_button">
-			<input type="submit" value="Εγγραφή" class="register_button" name="register" />
+			<input id="submit_button" type="submit" value="Εγγραφή" class="register_button" name="register" />
+		</div>
 		</div>
 	</form>
 
@@ -233,10 +247,7 @@ require 'validate.php';
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
-		</div>
-		<div class="sitemap">
-			<p class="title"> Sitemap </p>
+			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>

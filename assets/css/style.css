@@ -1,26 +1,84 @@
 /* Logo */
 
 .logo {
-	height: 120px;
-  width: 140px;
+  width: 11%;
+  height: auto;
 }
 
 .logo img {
 	width: 100%;
 }
 
+.top_contact{
+  top:5%;
+  width:20%;
+  position:absolute;
+  left:21%;
+}
+
+.top_contact img{
+  width:28%;
+  height:auto;
+  position:absolute;
+  left: 6px;
+}
+
+.top_contact .title{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 7px;
+  position:absolute;
+  color: #304f47;
+}
+
+.top_contact .number{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 35px;
+  position:absolute;
+  color: #304f47;
+}
+
+.store{
+  top:5%;
+  width:20%;
+  position:absolute;
+  left:42%;
+}
+
+.store img{
+  width:23%;
+  height:auto;
+  position:absolute;
+  left: 9px;
+  margin-top: 2px;
+}
+
+.store .title{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 11px;
+  position:absolute;
+  color: #304f47;
+}
+
 .home_menu_wrapper{
   overflow: hidden;
-  float: left; 
+  float: left;
   display: flex;
   margin: -0.5%;
 }
 
-
 .home_left_menu{
-  top: 46%;
+  top: 39%;
   bottom: 15%;
-  left: 17.3%;
+  left: 6%;
   width: 20%;
   height: 28%;
   position: absolute;
@@ -52,11 +110,45 @@
    opacity: 1;
 }
 
+.employers{
+  top: 69%;
+  bottom: 15%;
+  left: 6%;
+  width: 20%;
+  height: 28%;
+  position: absolute;
+  float: left;
+}
+
+.employers img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  display: block;
+}
+
+.employers img:hover {
+  opacity: 1;
+}
+
+.employers .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-family: 'Didact Gothic', sans-serif;
+  color: white;
+}
+
+.employers .centered img:hover{
+   opacity: 1;
+}
 
 .home_right_menu{
-  top: 46%;
+  top: 39%;
   bottom: 15%;
-  left: 38%;
+  left: 27%;
   width: 20%;
   height: 28%;
   position: absolute;
@@ -88,19 +180,54 @@
    opacity: 1;
 }
 
-.notification_banner {
-  width: 20.5%;
+.foreis{
+  top: 69%;
+  bottom: 15%;
+  left: 27%;
+  width: 20%;
+  height: 28%;
   position: absolute;
-  top: 32.6%;
-  left: 17.3%;
-  height: 10.7%;
+  overflow: auto;
+}
+
+.foreis img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  display: block;
+}
+
+.foreis img:hover {
+  opacity: 1;
+}
+
+.foreis .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-family: 'Didact Gothic', sans-serif;
+  color: white;
+}
+
+.foreis .centered img:hover{
+   opacity: 1;
+}
+
+.notification_banner {
+  width: 20.7%;
+  position: absolute;
+  top: 39%;
+  left: 48%;
+  height: 14%;
   background-color: #9EB5A8;
 }
 
 .notification_banner .centered {
   position: relative;
   top: 50%;
-  left: 60%;
+  left: 54%;
   transform: translate(-50%, -50%);
   font-size: 19px;
   font-family: 'Didact Gothic', sans-serif;
@@ -108,11 +235,11 @@
 }
 
 .notification_banner_border {
-  width: 20.5%;
+  width: 20.3%;
   position: absolute;
-  top: 32.6%;
-  left: 37%;
-  height: 9.8%;
+  top: 53%;
+  left: 48%;
+  height: 13.3%;
   background-color: white;
   border-color: #9EB5A8;
   border-style: solid;
@@ -139,10 +266,10 @@
 }
 
 .sidebar {
-  top: 180px;
-  left: 930px;
-  width: 253px;
-  height: 350px;
+  top: 30%;
+  left: 75%;
+  width:20%;
+  height: auto;
   position: absolute;
   overflow: auto;
 }
@@ -183,21 +310,21 @@
 }
 
 .footer{
-  top: 650px;
+  top: 109%;
   width: 100%;
-  height: 200px;
+  height: auto;
   position: absolute;
   overflow: auto;
   background-color: #DBDBD9;
 }
 
 .footer .contact{
-  width:20%;
+  width:26.6%;
   float: left;
 }
 
 .footer .schedule{
-  width:20%;
+  width:26.6%;
   float: left;
 }
 
@@ -207,7 +334,7 @@
 }
 
 .footer .map_context{
-  width:20%;
+  width:26.6%;
   float: left;
 }
 
@@ -225,11 +352,12 @@
 }
 
 .footer .contact img{
-  width:28%;
-  height:auto;
+  width:20%;
+  height:35%;
   position: relative;
   left: 5px;
   float: left;
+  margin-bottom:30%;
 }
 
 .footer .contact .number{
@@ -237,26 +365,23 @@
   font-size: 25px;
   font-weight: bold;
   margin-left: 100px;
-  top:12px;
   position: relative;
 }
 
 .footer .schedule img{
-  width:23%;
+  width:18%;
   height:auto;
   position: relative;
-  bottom:22px;
   left:20px;
   float: left;
 }
 
 .footer .schedule .time{
   font-family: 'Didact Gothic', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-style: italic;
   margin-left: 100px;
   position: relative;
-  bottom: 12px;
 }
 /* Top right containers for login and register */
 .top_corner_register{
@@ -329,7 +454,7 @@
 #top_nav_menu ul li {
   display: inline-block;
   padding: 0;
-  width: 15.5%;
+  width: 14.4%;
   margin: 0;
 }
 #top_nav_menu.align-right ul li {
@@ -346,7 +471,7 @@
   font-family: 'Didact Gothic', sans-serif;;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   -webkit-transition: color .25s;
   -moz-transition: color .25s;
@@ -433,22 +558,21 @@
 /* Search field */
 
 input[type=text].search_field {
-    width:400px;
-    height:50px;
+    width:180%;
+    height:7%;
     font-size: 20px;
     color: grey;
     -moz-border-radius: 15px;
  	  border-radius: 15px;
     border:solid 1px grey;
-    padding:5px;
     font-family: 'Didact Gothic', sans-serif;
 }
 
 /* Search button */
 
 .search_button {
-    width: 100px;
-    height:40px;
+    width: 8%;
+    height:6%;
     font-size: 18px;
     font-family: 'Didact Gothic', sans-serif;
     color: white;
@@ -457,7 +581,7 @@ input[type=text].search_field {
  	  border-radius: 15px;
     border:solid 1px;
     padding:5px;
-    margin-left: -108px;
+    margin-left: 2.5%;
 }
 
 /* Register Button */
@@ -541,5 +665,3 @@ input[type=text].search_field {
   opacity: 1;
   right: 0;
 }
-
-
