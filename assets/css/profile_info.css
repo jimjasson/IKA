@@ -134,14 +134,10 @@
   color: red;
 }
 
-<<<<<<< HEAD
-=======
 .profile_cont .logout:hover{
 	text-decoration: underline;
 }
 
-
->>>>>>> master
 .profile_cont .edit_cont{
   top: 25%;
 	width: 72%;

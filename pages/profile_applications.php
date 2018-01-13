@@ -2,20 +2,13 @@
 
 session_start();
 
-<<<<<<< HEAD
+
 $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
-
-?>
-
-=======
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
-
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
-
 ?>
->>>>>>> master
+
 <html>
 <title>ΠΡΟΦΙΛ - ΑΙΤΗΣΕΙΣ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
@@ -35,7 +28,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</a>
 </div>
 
-<<<<<<< HEAD
 <div class="top_contact">
 	<p class="title"> Κάλεσέ μας! </p>
 	<img src="/IKA/data/images/phone.png">
@@ -47,8 +39,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<img src="/IKA/data/images/office.png">
 </div>
 
-=======
->>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -85,7 +75,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-<<<<<<< HEAD
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
@@ -96,15 +85,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<a href="/IKA/pages/under_construction.php">
 		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
 		</a>
-=======
-		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li>
-			<form action="#" method="get"> </li>
-			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
-		 </form>
->>>>>>> master
 	</ul>
 </div>
 
@@ -143,10 +123,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		</a>
 
 		<div class="edit_cont">
-<<<<<<< HEAD
 
-		</div>
-=======
 			<h2 class="app_title">Διαθέσιμες Αιτήσεις:</h2>
 			<a href="/IKA/pages/profile_applications_cld.php" class="app_child"> Αίτηση ασφάλισης τέκνων </a>
 			<?php if ( $rows2['INSUR_TYPE'] == 0 )  {?>	<!-- Ασφαλισμένος -->
@@ -156,7 +133,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 		</div>
 
->>>>>>> master
 <?php } else { ?>
 		<div class="login_cont">
 			<div class="login_alert">
@@ -180,19 +156,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
   </div>
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-<!-- Footer --> 
-=======
 <!-- Footer -->
->>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -203,14 +167,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-<<<<<<< HEAD
 			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
-=======
-			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
-		</div>
-		<div class="sitemap">
-			<p class="title"> Sitemap </p>
->>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -224,8 +181,5 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> master
+

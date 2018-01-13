@@ -144,8 +144,6 @@
   border-style: solid;
 }
 
-<<<<<<< HEAD
-=======
 .profile_cont .logout:hover{
 	text-decoration: underline;
 }
@@ -203,8 +201,6 @@
 	position: absolute;
 }
 
-
->>>>>>> master
 /* If not logged in */
 
 .login_cont{

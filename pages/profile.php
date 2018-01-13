@@ -2,20 +2,13 @@
 
 session_start();
 
-<<<<<<< HEAD
 $mysqli = new mysqli( "localhost", "root", "root", "sdi1400220" );
-
-?>
-
-=======
-$mysqli = new mysqli( "localhost", "root", "root", "IKA" );
 
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
-
 ?>
->>>>>>> master
+
 <html>
 <title>ΠΡΟΦΙΛ | ΙΚΑ</title>
 <link rel="icon" href="/IKA/data/images/ika.jpg">
@@ -35,7 +28,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	</a>
 </div>
 
-<<<<<<< HEAD
 <div class="top_contact">
 	<p class="title"> Κάλεσέ μας! </p>
 	<img src="/IKA/data/images/phone.png">
@@ -47,8 +39,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<img src="/IKA/data/images/office.png">
 </div>
 
-=======
->>>>>>> master
 <!-- Register and Login -->
 <?php
 	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
@@ -85,7 +75,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <div id='top_nav_menu'>
 	<ul>
 		 <li class="active"><a href='/IKA/index.php'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
-<<<<<<< HEAD
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
 		 <li><a href='/IKA/pages/under_construction.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
@@ -96,15 +85,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<a href="/IKA/pages/under_construction.php">
 		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
 		</a>
-=======
-		 <li><a href='#'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li>
-			<form action="#" method="get"> </li>
-			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button>
-		 </form>
->>>>>>> master
 	</ul>
 </div>
 
@@ -156,16 +136,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			<p class ="new_name">Νέο όνομα χρήστη:</p>
 			<p class ="new_email">Νέο email:</p>
 			<p class ="new_password">Νέο password:</p>
-<<<<<<< HEAD
-			<form class="form" action="/IKA/pages/under_construction.php" method="post" enctype="multipart/form-data" autocomplete="off">
-				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" required />
-				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" required />
-				<input type="password"  class="change_input" placeholder="Νέο password"  id="password" name="password"  />
-				<input type="password"  class="change_input" placeholder="Επιβεβαίωση" id="confirm_password" name="confirm_password"  />
-				<input type="submit" class="change_input" value="Αλλαγή" name="register" />
-				</div>
-			</form>
-=======
 			<form class="form" action="/IKA/pages/profile.php" method="post" enctype="multipart/form-data" autocomplete="off">
 				<input type="text"  class="change_input" value="<?php echo $rows['USERNAME']; ?>" name="username" />
 				<input type="email"  class="change_input" value="<?php echo $rows['EMAIL']; ?>" name="email" />
@@ -234,7 +204,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 			}
 
 			?>
->>>>>>> master
     </div>
 <?php } else { ?>
 			<div class="login_cont">
@@ -257,20 +226,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 <?php }  ?>
   </div>
 
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-<!-- Footer --> 
-=======
 <!-- Footer -->
->>>>>>> master
 
 	<div class="footer">
 		<div class="contact">
@@ -281,14 +237,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="/IKA/data/images/office.png">
-<<<<<<< HEAD
 			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
-=======
-			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
-		</div>
-		<div class="sitemap">
-			<p class="title"> Sitemap </p>
->>>>>>> master
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
@@ -302,8 +251,5 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> master
+

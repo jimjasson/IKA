@@ -255,8 +255,6 @@ input[type="submit"].change_input{
   top: 80%;
   left: 40%;
   position: absolute;
-<<<<<<< HEAD
-=======
   border-radius: 4px;
   background-color: #FF866D;
   border: none;
@@ -268,7 +266,6 @@ input[type="submit"].change_input{
   transition: all 0.5s;
   cursor: pointer;
   margin: 2px;
->>>>>>> master
 }
 
 
