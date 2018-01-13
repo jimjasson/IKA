@@ -61,46 +61,64 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 	<ul>
 		 <li class='active'><a href='#'><span>ΑΡΧΙΚΗ ΣΕΛΙΔΑ</span></a></li>
 		 <li><a href='/IKA/pages/insured.php'><span>ΑΣΦΑΛΙΣΜΕΝΟΙ</span></a></li>
-		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
-		 <li> 
-			<form action="#" method="get"> </li>
-			<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
-				<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
-		 </form>
+		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; ΣΥΝΤΑΞΙΟΥΧΟΙ</span></a></li>
+		 <li><a href='/IKA/pages/pensioners.php'><span>&nbsp; &nbsp; &nbsp; ΕΡΓΟΔΟΤΕΣ</span></a></li>
+		 <li class='last'><a href='/IKA/pages/pensioners.php'><span>ΦΟΡΕΙΣ</span></a></li>
+		 <li class='last'> 
+		<input type="text" name="search"  class="search_field" placeholder="Αναζήτηση...">
+			</li>
+		<a href="/IKA/pages/under_construction.php">
+		<button class="search_button" type="submit" style="cursor:pointer;"> Πάμε! </button> 
+		</a>
 	</ul>
 </div>
 
 
 <div class="home_menu_wrapper">
-	<!--
-	<div class="notification_banner">
-		<div class="centered"> Ψάχνεις τις βεβαιώσεις;</div>
-	</div>
-	
-	<div class="notification_banner_border">
-		 <?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
-		?>
-			<div class="top"> Είναι στο προφίλ σου!</div>
-		<?php } else { ?>
-			<div class="top"> Είναι στο προφίλ σου!</div>
-			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
-		<?php 
-		}
-		?>
-	</div>
-	!-->
+
+	<p style="font-family: 'Didact Gothic', sans-serif;font-size: 25px;margin-left:24%;"><i>Ψάχνεις υπηρεσίες για... </i></p>
 	<div class="home_left_menu">
 		<a href="/IKA/pages/insured.php">
 			<img src="data/images/asfalismenoi_banner.jpg">
-			<div class="centered">Ασφαλισμένοι</div>
+			<div class="centered"> <b> Ασφαλισμένους; </b></div>
 		</a>
 	</div>
 	
 	<div class="home_right_menu">
 		<a href="/IKA/pages/pensioners.php">
 			<img src="data/images/syntaxiouxoi_banner.jpg">
-			<div class="centered">Συνταξιούχοι</div>
+			<div class="centered"> <b> Συνταξιούχους; </b> </div>
 		</a>
+	</div>
+
+	<div class="employers">
+		<a href="/IKA/pages/under_construction.php">
+			<img src="data/images/ergodotes_banner.jpg">
+			<div class="centered"> <b> Εργοδότες; </b> </div>
+		</a>
+	</div>
+
+	<div class="foreis">
+		<a href="/IKA/pages/under_construction.php">
+			<img src="data/images/foreis_banner.jpg">
+			<div class="centered"> <b> Φορείς; </b> </div>
+		</a>
+	</div>
+
+	<div class="notification_banner">
+		<div class="centered"> Μήπως ψάχνεις τις βεβαιώσεις;</div>
+	</div>
+
+	<div class="notification_banner_border">
+	<?php if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+		?>
+		<div class="top"> Είναι στο προφίλ σου!</div>
+		<?php } else { ?>
+			<div class="top"> Είναι στο προφίλ σου!</div>
+			<div class="bottom"> Κάνε <u> <a href="/IKA/pages/login.php" style="color:#9EB5A8"> σύνδεση </a> </u> ή <u> <a href="/IKA/pages/register.php" style="color:#9EB5A8"> εγγραφή </a> </u> για να τις δεις!</div>
+		<?php 
+		}
+	?>
 	</div>
 
 <!--Sidebar --> 
@@ -126,10 +144,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 		<div class="schedule">
 			<p class="title"> Ωράριο Καταστημάτων </p>
 			<img src="data/images/office.png">
-			<p class="time"> Δευτέρα - Παρασκευή 09:00 - 14:00</p>
-		</div>
-		<div class="sitemap">
-			<p class="title"> Sitemap </p>
+			<p class="time"> Δευτέρα - Παρασκευή <br> 09:00 - 14:00</p>
 		</div>
 		<div class="map_context">
 			<p class="title"> Αναζητήστε το κοντινότερο γραφείο ΙΚΑ! </p>
