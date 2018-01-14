@@ -184,6 +184,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 					if( $new_username > " " ){
 						$sql = "UPDATE accounts SET USERNAME = '$new_username' WHERE AFM = '$afm' ";
 						$results3 = $mysqli->query($sql);
+						$_SESSION["username"] = $new_username;
 					}
 					if( $new_email > " " ){
 						$sql = "UPDATE accounts SET EMAIL = '$new_email' WHERE AFM = '$afm' ";
@@ -192,10 +193,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 					if( $new_password > " " ){
 						$sql = "UPDATE accounts SET PASSWORD = '$new_password' WHERE AFM = '$afm' ";
 						$results3 = $mysqli->query($sql);
-						$_SESSION["username"] = $new_username;
 					}
-					$message = $_SESSION['username'] ;
-					echo "<script type='text/javascript'>alert('$message');</script>";
+
 				}
 				else {	//error
 					$message = "Δεν έγινε αλλαγή των στοιχεία σας!";
