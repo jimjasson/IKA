@@ -146,6 +146,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     		} elseif ( $per_month >= 2000 ) {
     			$pension = ( 70 * $per_month ) / 100;
     		}
+	 $pension = round($pension, 2);
       ?>
         <p class="message"> Η σύνταξη σας θα είναι <?php echo $pension; ?> ευρώ τον μήνα! Θέλετε να βγείτε σε σύνταξη;</p>
         <a href= <?php echo $url ?> >
