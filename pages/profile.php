@@ -191,6 +191,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 						$results3 = $mysqli->query($sql);
 					}
 					if( $new_password > " " ){
+						$new_password = md5( $new_password );
 						$sql = "UPDATE accounts SET PASSWORD = '$new_password' WHERE AFM = '$afm' ";
 						$results3 = $mysqli->query($sql);
 					}
