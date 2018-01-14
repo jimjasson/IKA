@@ -11,7 +11,7 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 	$username    = $_POST[ 'username' ];
 	$password    = md5( $_POST[ 'password' ] );
 
-	$sql = "SELECT * FROM accounts WHERE USERNAME='$username' ";
+	$sql = "SELECT * FROM accounts WHERE USERNAME='$username' || AFM='$afm' ";
 	
 	$result = $mysqli->query( $sql );
 	$redirect = true;
