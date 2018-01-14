@@ -5,9 +5,6 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 	$password = md5( $_POST[ 'password' ] );
 	$username = $_POST[ 'username' ];
 
-	error_log($username);
-	error_log($password);
-
 	$_SESSION[ 'username' ] = $username;
 
 	$sql = "SELECT * FROM accounts WHERE USERNAME='$username' AND PASSWORD='$password'";
@@ -16,13 +13,14 @@ if ( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 
 	if ( $result->num_rows !== 0 ) {
 		$_SESSION[ 'logged_in'] = "yes";
+		$message = "Επιτυχής Σύνδεση!";
+		echo "<script type='text/javascript'>alert('$message');</script>";
 		
-		if ( isset( $_SESSION['url'] ) ) {
+		if ( isset( $_SESSION['url'] ) || ! $_SESSION['url'] === "/IKA/pages/login.php" ) {
 			$url = $_SESSION['url'];
-			header( "location: $url" );
-
+			echo "<script type='text/javascript'>window.location = '$url';</script>";
 		} else {
-			header( "location: /IKA/index.php" );
+			echo "<script type='text/javascript'>window.location = /IKA/index.php;</script>";
 		}
 	} else {
 		$message = "Τα στοιχεία που δώσατε δεν αντιστοιχούν σε κάποιον εγγεγραμμένο χρήστη.";
